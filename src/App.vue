@@ -8,11 +8,11 @@
         </router-link>        
       </v-toolbar-title>
       <v-spacer></v-spacer>
-        <v-btn flat v-if="!userIsAuthenticated" to="/about"><span>Sobre</span></v-btn>
-        <v-btn flat v-if="!userIsAuthenticated" to="/contact"><span>Contato</span>  </v-btn>
-        <v-btn outline v-if="!userIsAuthenticated" to="/signin"><span>Login</span>  </v-btn>
-        <v-btn v-if="userIsAuthenticated" to="/profile"><span>Perfil</span>  </v-btn>
-        <v-btn v-if="userIsAuthenticated" @click="onLogout"><span>Logout</span>  </v-btn>
+        <v-btn flat v-if="!isAuthenticated" to="/about"><span>Sobre</span></v-btn>
+        <v-btn flat v-if="!isAuthenticated" to="/contact"><span>Contato</span>  </v-btn>
+        <v-btn outline v-if="!isAuthenticated" to="/signin"><span>Login</span>  </v-btn>
+        <v-btn flat v-if="isAuthenticated" to="/profile"><span>Perfil</span>  </v-btn>
+        <v-btn flat v-if="isAuthenticated" @click="onLogout"><span>Logout</span>  </v-btn>
     </v-toolbar>
     <v-content>
       <router-view/>
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: 'App',
@@ -30,13 +31,12 @@ export default {
     }
   },
   computed: {
-    userIsAuthenticated () {
-      return this.$store.getters.user !== null && this.$store.getters.user !== undefined
-    }
+    ...mapState("Authentication", ["isAuthenticated"])
   },
   methods: {
+    ...mapActions('Authentication', ['signOut']),
     onLogout () {
-      this.$store.dispatch('logout')
+      this.signOut()
       this.$router.push('/')
     }
   }
