@@ -12,19 +12,19 @@
   <v-container grid-list-md>
     <v-layout wrap>
       
-      <v-flex xs12 md4 v-for="vaga in vagas" :key="vaga.papel">
+      <v-flex xs12 md4 v-for="job in getList" :key="job.id">
         <v-card max-width="400">
           <v-card-title>
             <v-icon large left>fas fa-user-tie</v-icon>
-            <span class="title font-weight-thin ">{{vaga.papel}}</span>
+            <span class="title font-weight-thin ">{{job.role}}</span>
           </v-card-title>
           <v-card-text>            
-            {{vaga.descricao}}
+            {{job.description}}
           </v-card-text>
           <v-card-text >
-            <div  class="font-weight-medium">{{vaga.empresa}}</div>
-            <div>{{vaga.contato}}</div>
-            <div><span class="caption">{{vaga.dataPublicada}}</span></div>
+            <div  class="font-weight-medium">{{job.company}}</div>
+            <div>{{job.contact}}</div>
+            <div><span class="caption">{{job.datePublished}}</span></div>
           </v-card-text>                  
         </v-card>
       </v-flex>
@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
   data () {
     return {
@@ -74,10 +76,14 @@ export default {
       ]
     }
   },  
+  mounted() {
+    this.setList();
+  },
   computed: {
-    loading () {
-      return this.$store.getters.loading
-    }
+    ...mapGetters("Jobs", ["getList"])
+  },
+  methods: {
+    ...mapActions("Jobs", ["setList"])
   }
 }
 </script>
