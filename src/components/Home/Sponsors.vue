@@ -14,17 +14,16 @@
       <v-flex xs12 sm12>
           <v-container grid-list-sm fluid>
             <v-layout row wrap>
-              <v-flex v-for="apoiador in apoiadores" :key="apoiador.nome"
+              <v-flex v-for="sponsor in getList" :key="sponsor.name"
                 align-center
                 justify-center
                 layout
-                text-xs-center >
-                  
+                text-xs-center >                  
                   <v-avatar size="160">
                       <v-img 
-                        :alt="apoiador.nome" 
-                        :src="apoiador.urlImage" 
-                        :lazy-src="apoiador.urlImage"
+                        :alt="sponsor.name" 
+                        :src="sponsor.image" 
+                        :lazy-src="sponsor.image"
                         aspect-ratio="1" class="grey lighten-2" >
                         <template v-slot:placeholder>
                           <v-layout fill-height align-center justify-center ma-0>
@@ -33,7 +32,6 @@
                         </template>
                       </v-img>
                   </v-avatar>
-
               </v-flex>
             </v-layout>
           </v-container>
@@ -44,34 +42,17 @@
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
-  data () {
-    return {
-      apoiadores: [
-        
-        {
-          nome: 'Senai Joinville',
-          urlImage: require('@/assets/senai.jpg')
-        },
-        {
-          nome: 'FESC Tecnologia',
-          urlImage: require('@/assets/fesc.png')
-        },
-        {
-          nome: 'Magrathea Labs',
-          urlImage: require('@/assets/magrathea.png')
-        },
-        {
-          nome: 'Unimed SC',
-          urlImage: require('@/assets/unimed.jpg')
-        }
-      ]
-    }
-  },  
+  mounted() {
+    this.setList();
+  },
   computed: {
-    loading () {
-      return this.$store.getters.loading
-    }
+    ...mapGetters("Sponsors", ["getList"])
+  },
+  methods: {
+    ...mapActions("Sponsors", ["setList"])
   }
 }
 </script>

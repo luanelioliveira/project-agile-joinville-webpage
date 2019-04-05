@@ -2,13 +2,14 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import Authentication from "./modules/Authentication";
 import Application from "./modules/Application";
-import * as firebase from 'firebase'
+import Sponsors from "./modules/Sponsors";
 
 Vue.use(Vuex)
 
 const modules = {
   Authentication,
-  Application
+  Application,
+  Sponsors
 }
 
 export default new Vuex.Store({

@@ -1,23 +1,23 @@
 <template>
     <div>        
         <Top />
-        <Apoiadores />
-        <TopJobs />
+        <Sponsors />
+        <Jobs />
         <Footer />     
     </div>
 </template>
 
 <script>
 import Top from './Top'
-import Apoiadores from './Apoiadores'
-import TopJobs from './TopJobs'
+import Sponsors from './Sponsors'
+import Jobs from './Jobs'
 import Footer from './Footer'
 
 export default {
   components: {
-    Apoiadores,
     Top,
-    TopJobs,
+    Sponsors,
+    Jobs,
     Footer
   },
   data () {
