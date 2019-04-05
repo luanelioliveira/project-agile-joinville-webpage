@@ -77,13 +77,13 @@ export default {
     }
   },  
   mounted() {
-    this.setList();
+    this.setListTop3();
   },
   computed: {
     ...mapGetters("Jobs", ["getList"])
   },
   methods: {
-    ...mapActions("Jobs", ["setList"])
+    ...mapActions("Jobs", ["setListTop3"])
   }
 }
 </script>
