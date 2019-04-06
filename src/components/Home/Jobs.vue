@@ -9,10 +9,9 @@
     </v-layout>
   </v-container>
 
-  <v-container grid-list-md>
-    <v-layout wrap>
-      
-      <v-flex xs12 md4 v-for="job in getList" :key="job.id">
+  <v-container grid-list-lg>
+    <v-layout row wrap>
+      <v-flex xs4 v-for="job in jobs" :key="job.id">
         <v-card max-width="400">
           <v-card-title>
             <v-icon large left>fas fa-user-tie</v-icon>
@@ -46,44 +45,14 @@
 import {mapActions, mapGetters} from "vuex";
 
 export default {
-  data () {
-    return {
-      vagas: [
-        {
-          id: 1,
-          papel : 'Desenvolvedor Front-End',
-          empresa : 'Empresa Tecnologia',
-          contato : 'teste@gmail.com',
-          dataPublicada: '04/04/2019',
-          descricao: 'Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well.'
-        },
-        {
-          id: 2,
-          papel : 'Desenvolvedor Back-End',
-          empresa : 'Empresa Labs',
-          contato : 'teste@gmail.com',
-          dataPublicada: '04/04/2019',
-          descricao: 'Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well.'
-        },
-        {
-          id: 3,
-          papel : 'Desenvolvedor Oracle',
-          empresa : 'Empresa Tech',
-          contato : 'teste@gmail.com',
-          dataPublicada: '04/04/2019',
-          descricao: 'Turns out semicolon-less style is easier and safer in TS because most gotcha edge cases are type invalid as well.'
-        }
-      ]
-    }
-  },  
   mounted() {
-    this.setListTop3();
+    this.getJobsTop3();
   },
   computed: {
-    ...mapGetters("Jobs", ["getList"])
+    ...mapGetters("Jobs", ["jobs"])
   },
   methods: {
-    ...mapActions("Jobs", ["setListTop3"])
+    ...mapActions("Jobs", ["getJobsTop3"])
   }
 }
 </script>

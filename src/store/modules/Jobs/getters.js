@@ -1,5 +1,5 @@
-const getList = state => state.list
+const jobs = state => state.jobs
 
 export default{
-    getList
+    jobs
 }

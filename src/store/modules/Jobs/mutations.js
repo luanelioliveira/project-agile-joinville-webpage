@@ -1,7 +1,7 @@
-const SET_LIST = (state, payload) => {
-    state.list = payload.list;
+const SET_JOBS = (state, payload) => {
+    state.jobs = payload;
 };
 
 export default {
-    SET_LIST
+    SET_JOBS
 }
