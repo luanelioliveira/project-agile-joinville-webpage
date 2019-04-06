@@ -8,10 +8,10 @@
 </template>
 
 <script>
-import Top from './Top'
-import Sponsors from './Sponsors'
-import Jobs from './Jobs'
-import Footer from './Footer'
+import Top from './Components/Top'
+import Sponsors from './Components/Sponsors'
+import Jobs from './Components/Jobs'
+import Footer from './Components/Footer'
 
 export default {
   components: {
