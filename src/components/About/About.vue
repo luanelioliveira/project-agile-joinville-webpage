@@ -7,7 +7,11 @@
         </v-layout>
         <v-layout>
             <v-flex>
-                <blockquote class="blockquote">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum maiores modi quidem veniam, expedita quis laboriosam, ullam facere adipisci, iusto, voluptate sapiente corrupti asperiores rem nemo numquam fuga ab at.</blockquote>                
+                <blockquote class="blockquote">
+                    O Agile Joinville é uma organização que não possui fins lucrativos, 
+                    mantida por um time de especialistas que fazem parte da comunidade joinvilense de métodos ágeis,
+                    que compartilham do objetivo de incetivar e disseminar a cultura ágil por toda região.                
+                </blockquote>                
             </v-flex>
         </v-layout>                
     </v-container>
