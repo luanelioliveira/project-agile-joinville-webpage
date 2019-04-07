@@ -10,7 +10,6 @@
       <v-spacer></v-spacer>
         <v-btn small flat v-if="!isAuthenticated" to="/about"><span>Sobre</span></v-btn>
         <v-btn small flat v-if="!isAuthenticated" to="/jobs"><span>Vagas</span></v-btn>
-        <v-btn small flat v-if="!isAuthenticated" to="/contact"><span>Contato</span></v-btn>
         <v-btn small outline v-if="!isAuthenticated" to="/signin"><span>Login</span></v-btn>
         <v-btn small flat v-if="isAuthenticated" to="/profile"><span>Perfil</span></v-btn>
         <v-btn small flat v-if="isAuthenticated" @click="onLogout"><span>Logout</span></v-btn>
