@@ -22,7 +22,7 @@ const getJobs = ({ commit }) => {
 }
 
 const getJobsTop3 = ({ commit }) => {
-    const jobs = []
+    let jobs = []
     commit("Application/SET_LOADING", true, { root: true });
     const ref = firebase.firestore().collection('jobs').orderBy('datePublished', 'desc').limit(3);
     ref.onSnapshot((snapshot) => {        
@@ -36,7 +36,7 @@ const getJobsTop3 = ({ commit }) => {
                 role: doc.data().role,
                 datePublished: date.toLocaleString("pt-BR", {day: '2-digit', month:'2-digit', year:'numeric'})
             });
-        });        
+        });    
         commit("SET_JOBS", jobs );
         commit("Application/SET_LOADING", false, { root: true });
     });  

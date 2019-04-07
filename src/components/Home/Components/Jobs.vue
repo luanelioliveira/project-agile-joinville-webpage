@@ -8,7 +8,6 @@
       </v-flex>
     </v-layout>
   </v-container>
-
   <v-container grid-list-lg>
     <v-layout row wrap v-if="jobs">
       <v-flex xs12 md4 v-for="job in jobs" :key="job.id">
@@ -33,9 +32,16 @@
         </v-card>
       </v-flex>
     </v-layout>
+    <v-layout  align-center column justify-center v-else>
+      <v-flex>
+        <span class="text-uppercase">
+          <v-btn disabled>Não há vagas publicadas</v-btn>
+        </span>
+      </v-flex>
+    </v-layout>
   </v-container>        
 
-  <v-container fluid>
+  <v-container fluid v-if="jobs">
     <v-layout align-center column justify-center>
       <v-flex>
         <v-btn large outline to="/jobs">Ver mais</v-btn>
