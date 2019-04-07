@@ -2,7 +2,7 @@
     <v-container>  
         <v-layout>
             <v-flex>
-                <h1 class="display-2 font-weight-thin">Vagas Disponíveis</h1>
+                <h1 class="display-2 font-weight-thin">Vagas</h1>
             </v-flex>
         </v-layout>
         <v-container grid-list-lg>
