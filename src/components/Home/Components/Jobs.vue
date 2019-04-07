@@ -44,7 +44,7 @@
   <v-container fluid v-if="jobs">
     <v-layout align-center column justify-center>
       <v-flex>
-        <v-btn large outline to="/jobs">Ver mais</v-btn>
+        <v-btn outline to="/jobs">Ver mais vagas</v-btn>
       </v-flex>
     </v-layout>    
   </v-container>   
