@@ -8,11 +8,12 @@
         </router-link>        
       </v-toolbar-title>
       <v-spacer></v-spacer>
-        <v-btn flat v-if="!isAuthenticated" to="/about"><span>Sobre</span></v-btn>
-        <v-btn flat v-if="!isAuthenticated" to="/contact"><span>Contato</span>  </v-btn>
-        <v-btn outline v-if="!isAuthenticated" to="/signin"><span>Login</span>  </v-btn>
-        <v-btn flat v-if="isAuthenticated" to="/profile"><span>Perfil</span>  </v-btn>
-        <v-btn flat v-if="isAuthenticated" @click="onLogout"><span>Logout</span>  </v-btn>
+        <v-btn small flat v-if="!isAuthenticated" to="/about"><span>Sobre</span></v-btn>
+        <v-btn small flat v-if="!isAuthenticated" to="/jobs"><span>Vagas</span></v-btn>
+        <v-btn small flat v-if="!isAuthenticated" to="/contact"><span>Contato</span></v-btn>
+        <v-btn small outline v-if="!isAuthenticated" to="/signin"><span>Login</span></v-btn>
+        <v-btn small flat v-if="isAuthenticated" to="/profile"><span>Perfil</span></v-btn>
+        <v-btn small flat v-if="isAuthenticated" @click="onLogout"><span>Logout</span></v-btn>
     </v-toolbar>
     <v-content>
       <router-view/>
@@ -25,11 +26,6 @@ import { mapState, mapActions } from "vuex";
 
 export default {
   name: 'App',
-  data () {
-    return {
-      sideNav: false
-    }
-  },
   computed: {
     ...mapState("Authentication", ["isAuthenticated"])
   },
