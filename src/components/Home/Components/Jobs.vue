@@ -2,7 +2,7 @@
 <v-container>
   
   <v-container fluid>
-    <v-layout align-center column justify-center>
+    <v-layout align-center column justify-center text-xs-center>
       <v-flex>
         <h1 class="display-2 font-weight-thin">Últimas Vagas Publicadas</h1>
       </v-flex>
