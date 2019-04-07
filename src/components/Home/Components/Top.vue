@@ -7,9 +7,10 @@
       align-center
       column
       justify-center
+      text-xs-center
     >
       <h1 class="display-3 font-weight-thin">Agile Joinville</h1>
-      <h4 class="mb-3">Participe dos nosso encontros e fique por dentro das novidades!</h4>
+      <h4 class="text-uppercase mb-3">Participe dos nosso encontros e fique por dentro das novidades</h4>
       <v-btn large outline color="white" href="https://www.meetup.com/pt-BR/Agile-Joinville/">Meetup Agile Joinville</v-btn>
     </v-layout>
   </v-parallax>
