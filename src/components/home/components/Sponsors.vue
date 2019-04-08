@@ -9,7 +9,7 @@
     </v-layout>
   </v-container>
 
-  <v-container grid-list-md>
+  <v-container grid-list-lg>
     <v-layout>
       <v-flex xs12 sm12>
           <v-container grid-list-sm fluid>
@@ -18,8 +18,8 @@
                 align-center
                 justify-center
                 layout
-                text-xs-center >                  
-                  <v-avatar size="160">
+                >                  
+                  <v-avatar size="120">
                       <v-img 
                         :alt="sponsor.name" 
                         :src="sponsor.image" 
