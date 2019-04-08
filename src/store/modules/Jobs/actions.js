@@ -2,6 +2,7 @@ import firebase from "firebase";
 
 const getJobs = ({ commit }) => {
     let jobs = []
+    commit("SET_JOBS", null );
     commit("Application/SET_LOADING", true, { root: true });
     const ref = firebase.firestore().collection('jobs')
     ref.onSnapshot((snapshot) => {        
@@ -23,6 +24,7 @@ const getJobs = ({ commit }) => {
 
 const getJobsTop3 = ({ commit }) => {
     let jobs = []
+    commit("SET_JOBS", null );
     commit("Application/SET_LOADING", true, { root: true });
     const ref = firebase.firestore().collection('jobs').orderBy('datePublished', 'desc').limit(3);
     ref.onSnapshot((snapshot) => {        
