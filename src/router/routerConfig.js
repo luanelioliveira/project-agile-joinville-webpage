@@ -1,9 +1,9 @@
-import Home from '@/components/Home/Home'
-import About from '@/components/About/About'
-import Jobs from '@/components/Jobs/Jobs'
-import Contact from '@/components/Contact/Contact'
-import Profile from '@/components/User/Profile'
-import Signin from '@/components/User/Signin'
+import Home from '@/components/home/Home'
+import About from '@/components/about/About'
+import Jobs from '@/components/jobs/Jobs'
+import Contact from '@/components/contact/Contact'
+import Profile from '@/components/user/Profile'
+import Signin from '@/components/user/Signin'
 
 export default [
   {
