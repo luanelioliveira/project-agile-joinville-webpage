@@ -1,7 +1,7 @@
 import firebase from "firebase";
 
 const getJobs = ({ commit }) => {
-    const jobs = []
+    let jobs = []
     commit("Application/SET_LOADING", true, { root: true });
     const ref = firebase.firestore().collection('jobs')
     ref.onSnapshot((snapshot) => {        
@@ -15,7 +15,7 @@ const getJobs = ({ commit }) => {
                 role: doc.data().role,
                 datePublished: date.toLocaleString("pt-BR", {day: '2-digit', month:'2-digit', year:'numeric'})
             });
-        });        
+        });
         commit("SET_JOBS", jobs );
         commit("Application/SET_LOADING", false, { root: true });
     });
