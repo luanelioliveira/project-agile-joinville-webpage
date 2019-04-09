@@ -1,50 +1,24 @@
-import firebase from "firebase";
+import JobsService from "@/services/JobsService";
 
-const getJobs = ({ commit }) => {
+const getAllJobs = ({ commit }) => {
     let jobs = []
     commit("SET_JOBS", null );
-    commit("Application/SET_LOADING", true, { root: true });
-    const ref = firebase.firestore().collection('jobs')
-    ref.onSnapshot((snapshot) => {        
-        snapshot.forEach((doc) => {
-            let date = doc.data().datePublished.toDate()
-            jobs.push({
-                id: doc.id,
-                company: doc.data().company,
-                contact: doc.data().contact,
-                description: doc.data().description,
-                role: doc.data().role,
-                datePublished: date.toLocaleString("pt-BR", {day: '2-digit', month:'2-digit', year:'numeric'})
-            });
-        });
+    JobsService.getAllJobs(results => {
+        jobs = results;
         commit("SET_JOBS", jobs );
-        commit("Application/SET_LOADING", false, { root: true });
     });
 }
 
-const getJobsTop3 = ({ commit }) => {
+const getTop3Jobs = ({ commit }) => {
     let jobs = []
     commit("SET_JOBS", null );
-    commit("Application/SET_LOADING", true, { root: true });
-    const ref = firebase.firestore().collection('jobs').orderBy('datePublished', 'desc').limit(3);
-    ref.onSnapshot((snapshot) => {        
-        snapshot.forEach((doc) => {
-            let date = doc.data().datePublished.toDate()
-            jobs.push({
-                id: doc.id,
-                company: doc.data().company,
-                contact: doc.data().contact,
-                description: doc.data().description,
-                role: doc.data().role,
-                datePublished: date.toLocaleString("pt-BR", {day: '2-digit', month:'2-digit', year:'numeric'})
-            });
-        });    
+    JobsService.getAllJobs(results => {
+        jobs = results.splice(0,3);
         commit("SET_JOBS", jobs );
-        commit("Application/SET_LOADING", false, { root: true });
-    });  
+    });
 }
 
 export default {
-    getJobs,
-    getJobsTop3
+    getAllJobs,
+    getTop3Jobs
 }

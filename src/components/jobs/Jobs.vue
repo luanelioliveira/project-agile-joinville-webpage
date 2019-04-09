@@ -46,13 +46,13 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   mounted() {
-    this.getJobs();
+    this.getAllJobs();
   },
   computed: {
     ...mapGetters("Jobs", ["jobs"])
   },
   methods: {
-    ...mapActions("Jobs", ["getJobs"])
+    ...mapActions("Jobs", ["getAllJobs"])
   }
 }
 </script>
