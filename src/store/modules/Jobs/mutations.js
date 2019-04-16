@@ -1,7 +1,12 @@
-const SET_JOBS = (state, payload) => {
+const setJobs = (state, payload) => {
     state.jobs = payload;
 };
 
+const clearJobs = (state) => {
+    state.jobs = null;
+};
+
 export default {
-    SET_JOBS
+    setJobs,
+    clearJobs
 }
