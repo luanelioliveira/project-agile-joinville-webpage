@@ -1,16 +1,10 @@
-import firebase from "firebase";
+import SponsorsService from "@/services/SponsorsService";
 
 const getSponsors = ({ commit }) => {
-    const sponsors = []
-    const ref = firebase.firestore().collection('sponsors')
-    ref.onSnapshot((snapshot) => {        
-        snapshot.forEach((doc) => {
-            sponsors.push({
-                name: doc.data().name,
-                image: doc.data().image
-            });
-        });        
-        commit("setSponsors", sponsors);
+    let sponsors = []
+    SponsorsService.getAllSponsors(results => {
+        sponsors = results;
+        commit("setSponsors", sponsors );
     });  
 }
 
