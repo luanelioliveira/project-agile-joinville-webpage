@@ -1,5 +1,5 @@
-const getList = state => state.list
+const sponsors = state => state.sponsors
 
 export default{
-    getList
+    sponsors
 }

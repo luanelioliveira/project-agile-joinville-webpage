@@ -14,7 +14,7 @@
       <v-flex xs12 sm12>
           <v-container grid-list-sm fluid>
             <v-layout row wrap>
-              <v-flex v-for="sponsor in getList" :key="sponsor.name"
+              <v-flex v-for="sponsor in sponsors" :key="sponsor.name"
                 align-center
                 justify-center
                 layout
@@ -46,13 +46,13 @@ import {mapActions, mapGetters} from "vuex";
 
 export default {
   mounted() {
-    this.setList();
+    this.getSponsors();
   },
   computed: {
-    ...mapGetters("Sponsors", ["getList"])
+    ...mapGetters("Sponsors", ["sponsors"])
   },
   methods: {
-    ...mapActions("Sponsors", ["setList"])
+    ...mapActions("Sponsors", ["getSponsors"])
   }
 }
 </script>

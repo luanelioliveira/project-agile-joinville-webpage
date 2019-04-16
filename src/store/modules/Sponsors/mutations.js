@@ -1,7 +1,7 @@
-const SET_LIST = (state, payload) => {
-    state.list = payload.list;
+const setSponsors = (state, payload) => {
+    state.sponsors = payload;
 };
 
 export default {
-    SET_LIST
+    setSponsors
 }
