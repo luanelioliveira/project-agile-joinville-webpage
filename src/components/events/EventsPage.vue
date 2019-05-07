@@ -110,19 +110,34 @@
             <v-container>
                 <v-layout align-center column justify-center text-xs-center mb-3>
                     <v-flex>
-                        <span class="display-1">Local</span>
+                        <span class="display-1">Local do Evento</span>
                     </v-flex>
-                </v-layout>  
+                </v-layout>
                 <v-layout align-center column justify-center text-xs-center>
-                    <v-flex fluid>
-                        <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14312.332763631206!2d-48.8535643!3d-26.2589633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x624c0303ba7bf8a7!2sSENAI+Joinville+Norte+I!5e0!3m2!1spt-BR!2sbr!4v1557257375168!5m2!1spt-BR!2sbr"
-                        frameborder="0" 
-                        style="border:0" 
-                        allowfullscreen>
-                        </iframe>
+                    <v-flex>
+                        <p>Auditório Principal, SENAI Norte</p>
+                        <p>R. Arno Waldemar Dohler, 957 - Zona Industrial Norte, Joinville</p>
+                    </v-flex>  
+                </v-layout>          
+                <v-layout>
+                    <v-flex>
+                        <div class="mapouter">
+                            <div class="gmap_canvas">
+                                <iframe
+                                id="gmap_canvas"
+                                width="100%"
+                                height="100%"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14312.332763631206!2d-48.8535643!3d-26.2589633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x624c0303ba7bf8a7!2sSENAI+Joinville+Norte+I!5e0!3m2!1spt-BR!2sbr!4v1557257375168!5m2!1spt-BR!2sbr"
+                                frameborder="0"
+                                scrolling="no"
+                                marginheight="0"
+                                marginwidth="0"
+                                />
+                            </div>
+                        </div>
                     </v-flex>                
-                </v-layout>                      
+                </v-layout>  
+                                 
             </v-container>
 
             <v-container>
@@ -215,3 +230,17 @@ import {mapActions, mapGetters} from "vuex";
     }
   }
 </script>
+
+<style>
+.mapouter {
+  text-align:right;
+  height:400px;
+  width:100%;
+}
+.gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  height:100%;
+  width:100%;
+}
+</style>
