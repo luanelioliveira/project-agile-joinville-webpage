@@ -5,6 +5,11 @@ import router from './router'
 import store from './store'
 import firebase from 'firebase'
 import { sync } from 'vuex-router-sync';
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify, {
+  iconfont: 'fa'
+});
 
 Vue.config.productionTip = false
 

@@ -72,6 +72,7 @@ export default {
     menuItems () {
       let menuItems = [
         { icon: 'fas fa-address-card', title: 'Sobre', link: '/about' },
+        { icon: 'fas fa-calendar', title: 'Eventos', link: '/events' },
         { icon: 'fas fa-briefcase', title: 'Vagas', link: '/jobs' }
       ]
       if (this.isAuthenticated) {
