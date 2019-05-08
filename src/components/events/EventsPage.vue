@@ -38,36 +38,36 @@
                     </v-flex>
                 </v-layout>
                 
-                <v-layout>
-                    <v-flex>                
-                        <v-timeline align-top>
-                            <v-timeline-item
-                            v-for="(program,i)  in programs"
-                            :key="i"
-                            large
-                            :icon="program.icon"
-                            fill-dot
-                            color="black"
+                <v-container>
+                    <v-layout >
+                        <v-flex>                                        
+                            <v-timeline
+                            align-top
+                            dense
                             >
-                                <template v-slot:opposite>
-                                    <span class="title font-weight-light">
-                                    <v-icon class="mr-1">fas fa-calendar-alt</v-icon>
-                                    {{program.hour}}
-                                    </span>
-                                </template>
-                                <v-card class="elevation-2" dark>
-                                    <v-card-title primary-title>
-                                        <div>
-                                            <div class="title">{{program.title}}</div>
-                                            <span class="grey--text">{{program.speaker}}</span>
-                                        </div>                                                                
-                                    </v-card-title>
-                                    <v-card-text class="white text--primary">{{program.description}}</v-card-text>
-                                </v-card>
-                            </v-timeline-item>
-                        </v-timeline>                
-                    </v-flex>
-                </v-layout>                
+                                <v-timeline-item
+                                small
+                                v-for="(program,i)  in programs"
+                                :key="i"
+                                >
+                                <v-layout pt-3>
+                                    <v-flex xs3 md1>
+                                        <strong>{{program.hour}}</strong>
+                                    </v-flex>
+                                    <v-flex xs9>
+                                        <strong>{{program.title}}</strong>
+                                        <div class="mb-2">{{program.description}}</div>                                        
+                                        <div class="caption mb-2">{{program.speaker}}</div>
+                                        <v-avatar>
+                                            <v-img :src="program.urlImage"></v-img>
+                                        </v-avatar>
+                                    </v-flex>
+                                </v-layout>
+                                </v-timeline-item>
+                            </v-timeline>
+                        </v-flex>
+                    </v-layout>
+                </v-container> 
             </v-container>
 
             <v-container>
@@ -170,9 +170,9 @@ import {mapActions, mapGetters} from "vuex";
         programs: [
             {
                 title: "Credenciamento",
-                hour: "08h às 09h",
+                hour: "08h",
                 icon: "fas fa-bullhorn",
-                urlImage: "https://images.pexels.com/photos/1068523/pexels-photo-1068523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                urlImage: "",
                 speaker: "",
                 description: "Iniciaremos o credenciamento a partir das 8h. Não esqueça de levar um documento com foto."
             },
@@ -180,7 +180,7 @@ import {mapActions, mapGetters} from "vuex";
                 title: "Como liderar pessoas em ambientes ágeis?",
                 hour: "09h15",
                 icon: "fas fa-chalkboard-teacher",
-                urlImage: "http://i.pravatar.cc/64",
+                urlImage: "https://media.licdn.com/dms/image/C4D03AQGMAUDxAP71Vw/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=R6eOZ4zRPc3k2RkLhyLcUxbmJwAQ7F8-DAU0nSOm-sk",
                 speaker: "Bruna Von Runkel",
                 description: "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit."
             },
@@ -188,15 +188,15 @@ import {mapActions, mapGetters} from "vuex";
                 title: "Desenvolvendo produtos com Lean Inception",
                 hour: "10h15",
                 icon: "fas fa-chalkboard-teacher",
-                urlImage: "http://i.pravatar.cc/64",
-                speaker: "Caco",
+                urlImage: "https://media.licdn.com/dms/image/C4E03AQG9IYGA8lqBfg/profile-displayphoto-shrink_800_800/0?e=1562803200&v=beta&t=PhfxzP0idpCW2Nf4RLQsTEoheRjvNZNyQOwIOZKtP-Y",
+                speaker: "Cleiton (Caco) Luis Mafra",
                 description: "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit."
             },
             {
                 title: "Coffee Break",
                 hour: "11h15",
                 icon: "fas fa-coffee",
-                urlImage: "https://images.pexels.com/photos/374885/pexels-photo-374885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                urlImage: "",
                 speaker: "",
                 description: "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit."
             },
@@ -204,7 +204,7 @@ import {mapActions, mapGetters} from "vuex";
                 title: "Debate entre os Keynotes",
                 hour: "13h15",
                 icon: "fas fa-comment-alt",
-                urlImage: "https://images.pexels.com/photos/1059114/pexels-photo-1059114.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                urlImage: "",
                 speaker: "",
                 description: "Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit."
             },
@@ -212,7 +212,7 @@ import {mapActions, mapGetters} from "vuex";
                 title: "Encerramento do Evento",
                 hour: "14h15",
                 icon: "fab fa-expeditedssl",
-                urlImage: "https://images.pexels.com/photos/1684187/pexels-photo-1684187.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                urlImage: "",
                 speaker: "",
                 description: ""
             }            
