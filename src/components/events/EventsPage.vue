@@ -1,155 +1,133 @@
 <template>
     <v-container>  
+        <v-layout  text-xs-center mb-3>
+            <v-flex>
+                <span class="display-1 font-bold">Agile Joinville Conference 2019</span>
+            </v-flex>
+        </v-layout>       
         <v-layout>
             <v-flex>
-                <h1 class="display-2 font-weight-thin">Eventos</h1>
+                <template>
+                <v-carousel 
+                height="350"
+                prev-icon="fas fa-angle-left"
+                next-icon="fas fa-angle-right"
+                hide-delimiters>
+                    <v-carousel-item
+                    v-for="(speaker,i) in speakers"
+                    :key="i"
+                    :src="speaker.src"
+                    ></v-carousel-item>
+                </v-carousel>
+                </template>              
             </v-flex>
         </v-layout>
-        <v-container>
-            <v-container>  
-                <v-layout mb-3>
-                    <v-flex>
-                        <span class="display-1 font-bold">Agile Joinville Conference 2019</span>
-                    </v-flex>
-                </v-layout>       
-                <v-layout>
-                    <v-flex>
-                        <template>
-                        <v-carousel 
-                        height="330"
-                        prev-icon="fas fa-angle-left"
-                        next-icon="fas fa-angle-right"
-                        hide-delimiters>
-                            <v-carousel-item
-                            v-for="(speaker,i) in speakers"
-                            :key="i"
-                            :src="speaker.src"
-                            ></v-carousel-item>
-                        </v-carousel>
-                        </template>              
-                    </v-flex>
-                </v-layout>
-            </v-container>
 
-            <v-container>
-                <v-layout align-center column justify-center text-xs-center mb-3>
-                    <v-flex>
-                        <span class="display-1">Programação</span>
-                    </v-flex>
-                </v-layout>
-                
-                <v-container>
-                    <v-layout >
-                        <v-flex>                                        
-                            <v-timeline
-                            align-top
-                            dense
-                            >
-                                <v-timeline-item
-                                small
-                                v-for="(program,i)  in programs"
-                                :key="i"
-                                >
-                                <v-layout pt-3>
-                                    <v-flex xs3 md1>
-                                        <strong>{{program.hour}}</strong>
-                                    </v-flex>
-                                    <v-flex xs9>
-                                        <strong>{{program.title}}</strong>
-                                        <div class="mb-2">{{program.description}}</div>                                        
-                                        <div class="caption mb-2">{{program.speaker}}</div>
-                                        <v-avatar>
-                                            <v-img :src="program.urlImage"></v-img>
-                                        </v-avatar>
-                                    </v-flex>
-                                </v-layout>
-                                </v-timeline-item>
-                            </v-timeline>
+        <v-layout align-center column justify-center text-xs-center mt-3>
+            <v-flex>
+                <span class="display-1">Programação</span>
+            </v-flex>
+        </v-layout>
+        <v-container>  
+        <v-layout >
+            <v-flex>                                        
+                <v-timeline
+                align-top
+                dense
+                >
+                    <v-timeline-item
+                    small
+                    v-for="(program,i)  in programs"
+                    :key="i"
+                    >
+                    <v-layout pt-3>
+                        <v-flex xs3 md1>
+                            <strong>{{program.hour}}</strong>
+                        </v-flex>
+                        <v-flex xs9>
+                            <strong>{{program.title}}</strong>
+                            <div class="mb-2">{{program.description}}</div>                                        
+                            <div class="caption mb-2">{{program.speaker}}</div>
+                            <v-avatar>
+                                <v-img :src="program.urlImage"></v-img>
+                            </v-avatar>
                         </v-flex>
                     </v-layout>
-                </v-container> 
-            </v-container>
-
-            <v-container>
-                <v-layout align-center column justify-center text-xs-center mb-3>
-                    <v-flex>
-                        <span class="display-1">Patrocinadores</span>
-                    </v-flex>
-                </v-layout>                   
-                <v-container grid-list-lg>
-                    <v-layout>
-                    <v-flex xs12 sm12>
-                        <v-container grid-list-sm fluid>
-                            <v-layout row wrap>
-                            <v-flex v-for="sponsor in sponsors" :key="sponsor.name"
-                                align-center
-                                justify-center
-                                layout
-                                >                  
-                                <v-avatar size="120">
-                                    <v-img 
-                                        :alt="sponsor.name" 
-                                        :src="sponsor.image" 
-                                        :lazy-src="sponsor.image"
-                                        aspect-ratio="1" class="grey lighten-2" >
-                                        <template v-slot:placeholder>
-                                        <v-layout fill-height align-center justify-center ma-0>
-                                            <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                                        </v-layout>
-                                        </template>
-                                    </v-img>
-                                </v-avatar>
-                            </v-flex>
-                            </v-layout>
-                        </v-container>
+                    </v-timeline-item>
+                </v-timeline>
+            </v-flex>
+        </v-layout>
+        </v-container>  
+        <v-layout align-center column justify-center text-xs-center mt-3>
+            <v-flex>
+                <span class="display-1">Patrocinadores</span>
+            </v-flex>
+        </v-layout>                   
+        <v-layout grid-list-lg>
+            <v-flex xs12 sm12>
+                <v-container grid-list-sm fluid>
+                    <v-layout row wrap>
+                    <v-flex v-for="sponsor in sponsors" :key="sponsor.name"
+                        align-center
+                        justify-center
+                        layout
+                        >                  
+                        <v-avatar size="120">
+                            <v-img 
+                                :alt="sponsor.name" 
+                                :src="sponsor.image" 
+                                :lazy-src="sponsor.image"
+                                aspect-ratio="1" class="grey lighten-2" >
+                                <template v-slot:placeholder>
+                                <v-layout fill-height align-center justify-center ma-0>
+                                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                                </v-layout>
+                                </template>
+                            </v-img>
+                        </v-avatar>
                     </v-flex>
                     </v-layout>
-                </v-container>        
-            </v-container>
-            
-            <v-container>
-                <v-layout align-center column justify-center text-xs-center mb-3>
-                    <v-flex>
-                        <span class="display-1">Local do Evento</span>
-                    </v-flex>
-                </v-layout>
-                <v-layout align-center column justify-center text-xs-center>
-                    <v-flex>
-                        <p>Auditório Principal, SENAI Norte</p>
-                        <p>R. Arno Waldemar Dohler, 957 - Zona Industrial Norte, Joinville</p>
-                    </v-flex>  
-                </v-layout>          
-                <v-layout>
-                    <v-flex>
-                        <div class="mapouter">
-                            <div class="gmap_canvas">
-                                <iframe
-                                id="gmap_canvas"
-                                width="100%"
-                                height="100%"
-                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14312.332763631206!2d-48.8535643!3d-26.2589633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x624c0303ba7bf8a7!2sSENAI+Joinville+Norte+I!5e0!3m2!1spt-BR!2sbr!4v1557257375168!5m2!1spt-BR!2sbr"
-                                frameborder="0"
-                                scrolling="no"
-                                marginheight="0"
-                                marginwidth="0"
-                                />
-                            </div>
-                        </div>
-                    </v-flex>                
-                </v-layout>  
-                                 
-            </v-container>
+                </v-container>
+            </v-flex>
+        </v-layout>
+    
+        <v-layout align-center column justify-center text-xs-center mt-3 mb-3>
+            <v-flex>
+                <span class="display-1">Local do Evento</span>
+            </v-flex>
+        </v-layout>
+        <v-layout text-xs-center>
+            <v-flex>
+                <p>Auditório Principal, SENAI Norte</p>
+                <p>R. Arno Waldemar Dohler, 957 - Zona Industrial Norte, Joinville</p>
+            </v-flex>  
+        </v-layout>          
+        <v-layout>
+            <v-flex>
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe
+                        id="gmap_canvas"
+                        width="100%"
+                        height="100%"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14312.332763631206!2d-48.8535643!3d-26.2589633!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x624c0303ba7bf8a7!2sSENAI+Joinville+Norte+I!5e0!3m2!1spt-BR!2sbr!4v1557257375168!5m2!1spt-BR!2sbr"
+                        frameborder="0"
+                        scrolling="no"
+                        marginheight="0"
+                        marginwidth="0"
+                        />
+                    </div>
+                </div>
+            </v-flex>                
+        </v-layout>  
+    
+        <v-layout text-xs-center mt-3 >
+            <v-flex>
+                <p class="display-1">Quer patrocinar ou divulgar sua empresa em nosso evento?</p>
+                <p>Mande um e-mail para: agile.joinville@gmail.com</p>
+            </v-flex>  
+        </v-layout>          
 
-            <v-container>
-                <v-layout align-center column justify-center text-xs-center>
-                    <v-flex>
-                        <p class="display-1">Quer patrocinar ou divulgar sua empresa em nosso evento?</p>
-                        <p>Mande um e-mail para: agile.joinville@gmail.com</p>
-                    </v-flex>  
-                </v-layout>          
-            </v-container>
-
-        </v-container>  
     </v-container>
 </template>
 
