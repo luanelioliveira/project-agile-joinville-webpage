@@ -2,25 +2,26 @@
   <v-app>
     <v-content>
       <section>
-        <v-parallax src="https://images.pexels.com/photos/1983046/pexels-photo-1983046.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="600">
+        <v-parallax src="https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/others%2Fjoinville-edited2.jpg?alt=media&token=23f558ab-4c5f-45ae-b2db-e2ebdc7b95ba" height="700">
           <v-layout
             column
             align-center
             justify-center
             class="white--text"
           >
-            <img src="./assets/vuetify.png" alt="Vuetify.js" height="200">
             <h1 class="white--text font-weight-thin mb-2 display-3 text-xs-center">AGILE JOINVILLE CONFERENCE</h1>
             <h1 class="white--text font-weight-black mb-2 headline text-xs-center">10 de Agosto de 2019</h1>
             <div class="subheading font-weight-black mb-3 text-xs-center">Powered by Agile Joinville</div>
             <v-btn
-              class="grey darken-4 font-weight-black mt-5"
+              class="indigo darken-3 mt-4"
               dark
-              large
               flat
+              round
+              depressed
+              large
               
             >
-              AGUARDAR INSCRIÇÕES
+              SAVE THE DATE
             </v-btn>
           </v-layout>
         </v-parallax>
