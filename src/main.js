@@ -1,15 +1,10 @@
 import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App.vue'
-import router from './router'
-import store from './store'
 import firebase from 'firebase'
-import { sync } from 'vuex-router-sync';
 import Vuetify from 'vuetify';
 
-Vue.use(Vuetify, {
-  iconfont: 'fa'
-});
+Vue.use(Vuetify);
 
 Vue.config.productionTip = false
 
@@ -24,10 +19,6 @@ var config = {
 
 firebase.initializeApp(config);
 
-sync(store, router);
-
 new Vue({
-  router,
-  store,
   render: h => h(App)
 }).$mount('#app')
