@@ -283,7 +283,7 @@
             <div class="text-xs-center">
               <h2 class="display-1">Quer apoiar, patrocinar ou divulgar sua empresa no evento?</h2>
               <span class="subheading mt-3">
-                Envie um e-mail para: agile.joinville@gmail.com
+                Envie um e-mail para {{email}}
               </span>
             </div>
           </v-flex>
@@ -345,7 +345,7 @@
                       <v-icon class="red--text text--lighten-2">email</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
-                      <v-list-tile-title>agilejoinville@gmail.com</v-list-tile-title>
+                      <v-list-tile-title>{{email}}</v-list-tile-title>
                     </v-list-tile-content>
                   </v-list-tile>
                 </v-list>
@@ -374,6 +374,7 @@ export default {
   name: 'App',
   data () {
     return {
+        email: 'agilejoinville@gmail.com',
         palestrantes: [
           {
             nome: 'Ana G. Soares',
