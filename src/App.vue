@@ -313,7 +313,7 @@
                   <div class="headline">Contate-nos</div>
                 </v-card-title>
                 <v-card-text>
-                  Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare.
+                  Envie uma email para nós com sua elogios, críticas e sugestões.
                 </v-card-text>
                 <v-list class="transparent">
                   <v-list-tile>
