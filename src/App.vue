@@ -10,8 +10,7 @@
             class="white--text"
           >
             <h1 class="white--text font-weight-thin mb-2 display-3 text-xs-center">AGILE JOINVILLE CONFERENCE</h1>
-            <h1 class="white--text font-weight-black mb-2 headline text-xs-center">10 de Agosto de 2019</h1>
-            <div class="subheading font-weight-black mb-3 text-xs-center">Powered by Agile Joinville</div>
+            <h1 class="white--text font-weight-black mb-2 headline text-xs-center">10 DE AGOSTO DE 2019</h1>
             <v-btn
               class="indigo darken-3 mt-4"
               dark
@@ -31,16 +30,16 @@
           column
           wrap
           class="my-5"
-          align-center
+          justify-space-around
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-1">Palestrantes Confirmados</h2>
+              <h2 class="display-1">Palestrantes Confirmados</h2>         
             </div>
           </v-flex>
           <v-flex xs12>
             <v-container grid-list-xl>
-              <v-layout row wrap align-center>
+              <v-layout row>
                 <v-flex 
                    v-for="(palestrante, i) in palestrantes"
                    :key="i"
@@ -48,15 +47,21 @@
                 >                
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
-                      <v-avatar size="150" color="grey lighten-4">
-                        <img :src="palestrante.urlImage" alt="avatar">
+                      <v-avatar size="180" color="grey lighten-4">
+                        <img :src="palestrante.imagem" alt="avatar">
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">{{palestrante.name}}</div>
+                      <div>
+                        <span class="headline text-xs-center">{{palestrante.nome}}</span>
+                        <div class="d-flex">
+                          <p class="text-xs-center">
+                             <Biografia :palestrante="palestrante" />             
+                          </p>
+                        </div>
+                      </div>                    
                     </v-card-title>
                     <v-card-text>
-                      <p class="text-xs-center">{{palestrante.description}}</p>
                     </v-card-text>
                   </v-card>
                 </v-flex>      
@@ -83,21 +88,21 @@
               <v-layout row wrap align-center>
                 <v-timeline>
                     <v-timeline-item
-                      v-for="(presentation, i) in presentations"
+                      v-for="(apresentacao, i) in apresentacoes"
                       :key="i"
-                      :color="presentation.color"
+                      :color="apresentacao.color"
                       small
                     >
                       <template v-slot:opposite>
                         <span
-                          :class="`title font-weight-bold ${presentation.color}--text`"
-                          v-text="presentation.hour"
+                          :class="`title font-weight-bold ${apresentacao.color}--text`"
+                          v-text="apresentacao.hour"
                         ></span>
                       </template>
                       <div class="py-3">
-                        <h2 :class="`title font-weight-light ${presentation.color}--text`">{{presentation.name}}</h2>
+                        <h2 :class="`title font-weight-light ${apresentacao.color}--text`">{{apresentacao.name}}</h2>
                         <div>
-                          {{presentation.description}}
+                          {{apresentacao.description}}
                         </div>
                       </div>
                     </v-timeline-item>
@@ -150,8 +155,8 @@
         <v-layout
           column
           wrap
-          class="my-5"
-          align-center
+          class="my-5"          
+          justify-space-around
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
@@ -214,21 +219,24 @@
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
                 <v-flex
-                  v-for="(item, i) in itemsSponsors"
+                  v-for="(item, i) in itensPatrocinados"
                   :key="i"
-                  xs12 sm6 md6 lg4 xl3>
+                  xs12 sm6 md6 lg3 xl3>
                   <v-hover>
-                    <v-card
-                      slot-scope="{ hover }"
-                      :class="`elevation-${hover ? 12 : 2}`"
-                    >
+                    <v-card 
+                       :class="`elevation-${hover ? 12 : 2}` "
+                       slot-scope="{ hover }"
+                    >           
                       <v-img :aspect-ratio="16/9" :src="item.urlImage">              
-                          <div
-                            :class="`d-flex transition-fast-in-fast-out font-weight-bold ${!item.pendent ? 'grey' : 'black'} v-card--reveal white--text`"
-                            style="height: 100%;"
-                          >
-                              {{item.msg}}
-                          </div>                  
+                        <v-expand-transition>           
+                            <div
+                              v-if="hover"
+                              :class="`d-flex transition-fast-in-fast-out font-weight-bold ${!item.pendent ? 'black' : ''} v-card--reveal white--text`"
+                              style="height: 100%;"
+                            >
+                                {{item.organization}}
+                            </div>                  
+                        </v-expand-transition>
                       </v-img>
                       <v-card-title>
                         <div>
@@ -239,14 +247,22 @@
                             </div>
                           </div>
                         </div>
-                        <v-spacer></v-spacer>
-                        <v-btn v-if="!item.pendent" flat icon color="blue" class="mr-0">
-                          <v-icon>thumb_up_alt</v-icon>
-                        </v-btn>      
-                        <v-btn v-if="item.pendent" flat icon color="red" class="mr-0">
-                          <v-icon>thumb_down_alt</v-icon>
-                        </v-btn>              
+                        <v-spacer></v-spacer>           
                       </v-card-title>
+                      <v-card-text >
+                          <span v-if="!item.pendent">
+                            <v-btn depressed outline color="grey" class="white--text">
+                               Patrocinado
+                               <v-icon right dark>favorite</v-icon>
+                            </v-btn>
+                          </span>
+                          <span v-if="item.pendent">
+                            <v-btn depressed color="cyan" class="white--text">
+                               Patrocine Aqui
+                               <v-icon right dark>favorite</v-icon>
+                            </v-btn>
+                          </span>
+                      </v-card-text>
                     </v-card>
                   </v-hover>          
                 </v-flex>
@@ -352,92 +368,102 @@
 </template>
 
 <script>
+import Biografia from './component/Biografia'
 export default {
+  components: { Biografia },
   name: 'App',
   data () {
     return {
         palestrantes: [
           {
-            name: 'Ana G. Soares',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fsoares.jpeg?alt=media&token=e091b545-9122-4cd1-ac60-7ff087355d6c',
-            description: 'Em breve maiores informações'
+            nome: 'Ana G. Soares',
+            imagem: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fsoares.jpeg?alt=media&token=e091b545-9122-4cd1-ac60-7ff087355d6c',
+            biografia: 'Em breve maiores informações'
           },
           {
-            name: 'Ana Spieker',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fspieker.jpeg?alt=media&token=9e1f91e6-5def-4db3-bde4-4d49ee966870',
-            description: 'Em breve maiores informações'
+            nome: 'Ana Spieker',
+            imagem: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fspieker.jpeg?alt=media&token=9e1f91e6-5def-4db3-bde4-4d49ee966870',
+            biografia: 'Em breve maiores informações'
           },
           {
-            name: 'Bruna Von Runkel',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fbruna.jpeg?alt=media&token=01e1097a-f68b-47a4-8a7b-54b73721cd80',
-            description: 'Em breve maiores informações'
+            nome: 'Bruna Von Runkel',
+            imagem: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fbruna.jpeg?alt=media&token=01e1097a-f68b-47a4-8a7b-54b73721cd80',
+            biografia: 'Em breve maiores informações'
           },
           {
-            name: 'Cleiton Luis Mafra',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fcaco.jpeg?alt=media&token=74a323d7-3ae1-4da6-b987-08d3f0631ac8',
-            description: 'Em breve maiores informações'
+            nome: 'Cleiton Luis Mafra',
+            imagem: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fcaco.jpeg?alt=media&token=74a323d7-3ae1-4da6-b987-08d3f0631ac8',
+            biografia: 'Em breve maiores informações'
           }
         ],
-        itemsSponsors: [
+        itensPatrocinados: [
           {
             name: 'Auditório',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fauditorio.jpeg?alt=media&token=51657047-4a9c-4a48-86af-fb24da3713d9',
             description: 'Espaço para até 100 pessoas',
             pendent: false,
-            msg: 'PATROCINADO'
+            msg: 'PATROCINADO',
+            organization: 'Nome da Empresa'
           },
           {
             name: 'Crachás',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcracha.jpg?alt=media&token=02037c90-dc24-4bf7-aa28-71e77427da02',
             description: '100 unidades de crachá e cordão',
             pendent: false,
-            msg: 'PATROCINADO'
+            msg: 'PATROCINADO',
+            organization: 'Nome da Empresa'
           },
           {
             name: 'Coffee',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcoffee.jpg?alt=media&token=4858e576-8850-4126-8d38-1266def52057',
             description: 'Coffee para até 100 pessoas',
             pendent: false,
-            msg: "PATROCINADO"
+            msg: "PATROCINADO",
+            organization: 'Nome da Empresa'
           },
           {
             name: 'Camisetas',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcamisetas.jpeg?alt=media&token=4488507d-0f69-4894-805d-1e0afbee6a0b',
             description: 'Camisetas para até 100 pessoas',
             pendent: true,
-            msg: "PENDENTE"
+            msg: "PENDENTE",
+            organization: ''
           },
           {
             name: 'Canetas',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcanetas.jpeg?alt=media&token=a09003bd-62a4-4862-a1de-6efc573763f0',
             description: 'Canetas para até 100 pessoas',
             pendent: false,
-            msg: 'PATROCINADO'
+            msg: 'PATROCINADO',
+            organization: 'Nome da Empresa'
           },
           {
             name: 'Blocos de Anotação',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fbloco.jpeg?alt=media&token=a8d9b266-9e08-4171-b36c-6efe0d9fa413',
             description: 'Blocos para até 100 pessoas',
             pendent: true,
-            msg: "PENDENTE"
+            msg: "PENDENTE",
+            organization: ''
           },
           {
             name: 'Stickers',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fstickers.jpeg?alt=media&token=9fb45ef8-f4d7-4537-aaf3-704c0332c7a2',
             description: 'Stickers para até 100 pessoas',
             pendent: true,
-            msg: "PENDENTE"
+            msg: "PENDENTE",
+            organization: ''
           },
           {
             name: 'Copos',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcopos.jpeg?alt=media&token=be184d1e-cb30-4ced-905b-d3def9a0aae3',
             description: 'Copos para até 100 pessoas',
             pendent: false,
-            msg: 'PATROCINADO'
+            msg: 'PATROCINADO',
+            organization: 'Nome da Empresa'
           }
 
        ],
-       presentations: [
+       apresentacoes: [
           {
             color: 'black',
             name: 'Credenciamento',
