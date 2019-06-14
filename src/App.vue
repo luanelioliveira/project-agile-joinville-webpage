@@ -19,7 +19,6 @@
               round
               depressed
               large
-              
             >
               SAVE THE DATE
             </v-btn>
@@ -53,9 +52,7 @@
                       <div class="headline text-xs-center">Cleiton (Caco) Luis Mafra</div>
                     </v-card-title>
                     <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. 
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti. 
+                      Em breve maiores informações. 
                     </v-card-text>
                   </v-card>
                 </v-flex>
@@ -70,9 +67,7 @@
                       <div class="headline">Ana G. Soares</div>
                     </v-card-title>
                     <v-card-text>
-                      Cras facilisis mi vitae nunc lobortis pharetra. Nulla volutpat tincidunt ornare. 
-                      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-                      Nullam in aliquet odio. Aliquam eu est vitae tellus bibendum tincidunt. Suspendisse potenti. 
+                      Em breve maiores informações.  
                     </v-card-text>
                   </v-card>
                 </v-flex>                
@@ -237,15 +232,10 @@
                     <v-card
                       slot-scope="{ hover }"
                       :class="`elevation-${hover ? 12 : 2}`"
-
                     >
-                      <v-img 
-                        :aspect-ratio="16/9" 
-                        :src="item.urlImage"
-                      >              
+                      <v-img :aspect-ratio="16/9" :src="item.urlImage">              
                           <div
-                            v-if="!item.pendent"
-                            class="d-flex transition-fast-in-fast-out font-weight-bold black v-card--reveal white--text"
+                            :class="`d-flex transition-fast-in-fast-out font-weight-bold ${!item.pendent ? 'grey' : 'black'} v-card--reveal white--text`"
                             style="height: 100%;"
                           >
                               {{item.msg}}
@@ -261,11 +251,11 @@
                           </div>
                         </div>
                         <v-spacer></v-spacer>
-                        <v-btn v-if="!item.pendent" dark fab small color="green" class="mr-0">
-                          <v-icon>check</v-icon>
+                        <v-btn v-if="!item.pendent" flat icon color="blue" class="mr-0">
+                          <v-icon>thumb_up_alt</v-icon>
                         </v-btn>      
-                        <v-btn v-if="item.pendent" dark fab small color="orange darken-3" class="mr-0">
-                          <v-icon>alarm</v-icon>
+                        <v-btn v-if="item.pendent" flat icon color="red" class="mr-0">
+                          <v-icon>thumb_down_alt</v-icon>
                         </v-btn>              
                       </v-card-title>
                     </v-card>
@@ -380,56 +370,56 @@ export default {
        itemsSponsors: [
           {
             name: 'Auditório',
-            urlImage: 'https://images.pexels.com/photos/296883/pexels-photo-296883.jpeg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fauditorio.jpeg?alt=media&token=51657047-4a9c-4a48-86af-fb24da3713d9',
             description: 'Espaço para até 100 pessoas',
             pendent: false,
             msg: 'PATROCINADO'
           },
           {
             name: 'Crachás',
-            urlImage: 'https://rm2.com.br/wp-content/uploads/2018/09/cracha-e-credencial.jpg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcracha.jpg?alt=media&token=02037c90-dc24-4bf7-aa28-71e77427da02',
             description: '100 unidades de crachá e cordão',
             pendent: false,
             msg: 'PATROCINADO'
           },
           {
             name: 'Coffee',
-            urlImage: 'https://images.pexels.com/photos/6347/coffee-cup-working-happy.jpg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcoffee.jpg?alt=media&token=4858e576-8850-4126-8d38-1266def52057',
             description: 'Coffee para até 100 pessoas',
-            pendent: true,
-            msg: "Pendente"
+            pendent: false,
+            msg: "PATROCINADO"
           },
           {
             name: 'Camisetas',
-            urlImage: 'https://images.pexels.com/photos/996329/pexels-photo-996329.jpeg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcamisetas.jpeg?alt=media&token=4488507d-0f69-4894-805d-1e0afbee6a0b',
             description: 'Camisetas para até 100 pessoas',
             pendent: true,
-            msg: "Pendente"
+            msg: "PENDENTE"
           },
           {
             name: 'Canetas',
-            urlImage: 'https://images.pexels.com/photos/910332/pexels-photo-910332.jpeg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcanetas.jpeg?alt=media&token=a09003bd-62a4-4862-a1de-6efc573763f0',
             description: 'Canetas para até 100 pessoas',
             pendent: false,
             msg: 'PATROCINADO'
           },
           {
             name: 'Blocos de Anotação',
-            urlImage: 'https://images.pexels.com/photos/158771/notebook-pen-table-blank-158771.jpeg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fbloco.jpeg?alt=media&token=a8d9b266-9e08-4171-b36c-6efe0d9fa413',
             description: 'Blocos para até 100 pessoas',
             pendent: true,
-            msg: "Pendente"
+            msg: "PENDENTE"
           },
           {
             name: 'Stickers',
-            urlImage: 'https://images.pexels.com/photos/317356/pexels-photo-317356.jpeg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fstickers.jpeg?alt=media&token=9fb45ef8-f4d7-4537-aaf3-704c0332c7a2',
             description: 'Stickers para até 100 pessoas',
             pendent: true,
-            msg: "Pendente"
+            msg: "PENDENTE"
           },
           {
             name: 'Copos',
-            urlImage: 'https://images.pexels.com/photos/885021/pexels-photo-885021.jpeg',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcopos.jpeg?alt=media&token=be184d1e-cb30-4ced-905b-d3def9a0aae3',
             description: 'Copos para até 100 pessoas',
             pendent: false,
             msg: 'PATROCINADO'
@@ -441,49 +431,49 @@ export default {
           color: 'black',
           name: 'Credenciamento',
           hour: '08:00 - 09:00',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Abertura',
           hour: '09:00 - 09:10',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Palestra 1',
           hour: '09:10 - 10:00',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Palestra 2',
           hour: '10:00 - 10:50',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Interalo',
           hour: '10:50 - 11:00',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Palestra 3',
           hour: '11:00 - 11:50',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Palestra 4',
           hour: '11:50 - 12:30',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         },
         {
           color: 'black',
           name: 'Mesa Redonda',
           hour: '13:10 - 13:20',
-          description: 'Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.'
+          description: ''
         }
       ]
     }
