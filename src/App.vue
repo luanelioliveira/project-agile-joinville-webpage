@@ -39,11 +39,11 @@
           </v-flex>
           <v-flex xs12>
             <v-container grid-list-xl>
-              <v-layout row>
+              <v-layout row wrap>
                 <v-flex 
                    v-for="(palestrante, i) in palestrantes"
                    :key="i"
-                   xs12 md6 lg3 xl3
+                   xs12 md6 lg3 xl4
                 >                
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
