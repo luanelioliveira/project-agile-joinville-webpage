@@ -43,7 +43,7 @@
                 <v-flex 
                    v-for="(palestrante, i) in palestrantes"
                    :key="i"
-                   xs12 md6 lg3 xl4
+                   xs12 md6 lg3 xl3
                 >                
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
