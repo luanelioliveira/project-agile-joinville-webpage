@@ -259,7 +259,7 @@
                           <span v-if="item.pendent">
                             <v-btn depressed color="cyan" class="white--text">
                                Patrocine Aqui
-                               <v-icon right dark>favorite</v-icon>
+                               <v-icon right dark>favorite_border</v-icon>
                             </v-btn>
                           </span>
                       </v-card-text>
