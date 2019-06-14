@@ -35,13 +35,13 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-1">Keynotes Confirmados!</h2>
+              <h2 class="display-1">Palestrantes Confirmados</h2>
             </div>
           </v-flex>
           <v-flex xs12>
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
-                <v-flex xs12 md6>
+                <v-flex xs12 md3>
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
@@ -49,14 +49,14 @@
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Cleiton (Caco) Luis Mafra</div>
+                      <div class="headline text-xs-center">Cleiton Luis Mafra</div>
                     </v-card-title>
                     <v-card-text>
-                      Em breve maiores informações. 
+                      <p class="text-xs-center">Em breve maiores informações</p>
                     </v-card-text>
                   </v-card>
                 </v-flex>
-                <v-flex xs12 md6>
+                <v-flex xs12 md3>
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
@@ -67,7 +67,37 @@
                       <div class="headline">Ana G. Soares</div>
                     </v-card-title>
                     <v-card-text>
-                      Em breve maiores informações.  
+                      <p class="text-xs-center">Em breve maiores informações</p>
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md3>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-avatar size="150" color="grey lighten-4">
+                        <img src="https://www.pena.com.br/wp-content/uploads/2017/05/user-icon.jpg" alt="avatar">
+                      </v-avatar>
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline">Ana Spiker</div>
+                    </v-card-title>
+                    <v-card-text>
+                      <p class="text-xs-center">Em breve maiores informações</p>
+                    </v-card-text>
+                  </v-card>
+                </v-flex>
+                <v-flex xs12 md3>
+                  <v-card class="elevation-0 transparent">
+                    <v-card-text class="text-xs-center">
+                      <v-avatar size="150" color="grey lighten-4">
+                        <img src="https://www.pena.com.br/wp-content/uploads/2017/05/user-icon.jpg" alt="avatar">
+                      </v-avatar>
+                    </v-card-text>
+                    <v-card-title primary-title class="layout justify-center">
+                      <div class="headline">Bruna Von Runkel</div>
+                    </v-card-title>
+                    <v-card-text>
+                      <p class="text-xs-center">Em breve maiores informações</p> 
                     </v-card-text>
                   </v-card>
                 </v-flex>                
@@ -101,12 +131,12 @@
                     >
                       <template v-slot:opposite>
                         <span
-                          :class="`headline font-weight-bold ${speakers.color}--text`"
+                          :class="`title font-weight-bold ${speakers.color}--text`"
                           v-text="speakers.hour"
                         ></span>
                       </template>
                       <div class="py-3">
-                        <h2 :class="`headline font-weight-light mb-3 ${speakers.color}--text`">{{speakers.name}}</h2>
+                        <h2 :class="`title font-weight-light ${speakers.color}--text`">{{speakers.name}}</h2>
                         <div>
                           {{speakers.description}}
                         </div>
