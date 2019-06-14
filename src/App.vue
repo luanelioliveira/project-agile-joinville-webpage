@@ -74,39 +74,17 @@
       <section>
         <v-layout
           column
-          wrap
-          class="my-5"
-          align-center
+          class="my-5"          
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
               <h2 class="display-1">Programação</h2>
             </div>
           </v-flex>
-          <v-flex xs10>
+          <v-flex xs12>
             <v-container grid-list>
-              <v-layout row wrap align-center>
-                <v-timeline>
-                    <v-timeline-item
-                      v-for="(apresentacao, i) in apresentacoes"
-                      :key="i"
-                      :color="apresentacao.color"
-                      small
-                    >
-                      <template v-slot:opposite>
-                        <span
-                          :class="`title font-weight-bold ${apresentacao.color}--text`"
-                          v-text="apresentacao.hour"
-                        ></span>
-                      </template>
-                      <div class="py-3">
-                        <h2 :class="`title font-weight-light ${apresentacao.color}--text`">{{apresentacao.name}}</h2>
-                        <div>
-                          {{apresentacao.description}}
-                        </div>
-                      </div>
-                    </v-timeline-item>
-                  </v-timeline>
+              <v-layout row wrap justify-space-around fill-height column>
+                <ListaPalestras/>
               </v-layout>
             </v-container>            
           </v-flex>
@@ -369,8 +347,10 @@
 
 <script>
 import Biografia from './component/Biografia'
+import ListaPalestras from './component/ListaPalestras'
+
 export default {
-  components: { Biografia },
+  components: { Biografia, ListaPalestras },
   name: 'App',
   data () {
     return {
