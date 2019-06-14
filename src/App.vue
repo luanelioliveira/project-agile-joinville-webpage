@@ -41,66 +41,25 @@
           <v-flex xs12>
             <v-container grid-list-xl>
               <v-layout row wrap align-center>
-                <v-flex xs12 md3>
+                <v-flex 
+                   v-for="(palestrante, i) in palestrantes"
+                   :key="i"
+                   xs12 md6 lg3 xl3
+                >                
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://media.licdn.com/dms/image/C4E03AQG9IYGA8lqBfg/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=Z8SZqfAq02QCeJ65R6NSNwKeU5kDRdC1H81-XtHX_m4" alt="avatar">
+                        <img :src="palestrante.urlImage" alt="avatar">
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline text-xs-center">Cleiton Luis Mafra</div>
+                      <div class="headline text-xs-center">{{palestrante.name}}</div>
                     </v-card-title>
                     <v-card-text>
-                      <p class="text-xs-center">Em breve maiores informações</p>
+                      <p class="text-xs-center">{{palestrante.description}}</p>
                     </v-card-text>
                   </v-card>
-                </v-flex>
-                <v-flex xs12 md3>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://media.licdn.com/dms/image/C4E03AQHjm2ITEDGZFw/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=-t9b9nDkACROLHAJUHFZer2zvyA8J32X9AE4mbVADNo" alt="avatar">
-                      </v-avatar>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Ana G. Soares</div>
-                    </v-card-title>
-                    <v-card-text>
-                      <p class="text-xs-center">Em breve maiores informações</p>
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md3>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://media.licdn.com/dms/image/C4E03AQFYlH46mgBG6Q/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=TeY0NRHeLLM8-Ae7PadozCjw7XSFZwp-uVPNXph5D8U" alt="avatar">
-                      </v-avatar>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Ana Spieker</div>
-                    </v-card-title>
-                    <v-card-text>
-                      <p class="text-xs-center">Em breve maiores informações</p>
-                    </v-card-text>
-                  </v-card>
-                </v-flex>
-                <v-flex xs12 md3>
-                  <v-card class="elevation-0 transparent">
-                    <v-card-text class="text-xs-center">
-                      <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://media.licdn.com/dms/image/C4D03AQGMAUDxAP71Vw/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=bW9S1fy2XTo01vLtfTVaZD8FFfajSye0m2YgGEHin9k" alt="avatar">
-                      </v-avatar>
-                    </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Bruna Von Runkel</div>
-                    </v-card-title>
-                    <v-card-text>
-                      <p class="text-xs-center">Em breve maiores informações</p> 
-                    </v-card-text>
-                  </v-card>
-                </v-flex>                
+                </v-flex>      
               </v-layout>
             </v-container>
           </v-flex>
@@ -124,21 +83,21 @@
               <v-layout row wrap align-center>
                 <v-timeline>
                     <v-timeline-item
-                      v-for="(speakers, i) in speakers"
+                      v-for="(presentation, i) in presentations"
                       :key="i"
-                      :color="speakers.color"
+                      :color="presentation.color"
                       small
                     >
                       <template v-slot:opposite>
                         <span
-                          :class="`title font-weight-bold ${speakers.color}--text`"
-                          v-text="speakers.hour"
+                          :class="`title font-weight-bold ${presentation.color}--text`"
+                          v-text="presentation.hour"
                         ></span>
                       </template>
                       <div class="py-3">
-                        <h2 :class="`title font-weight-light ${speakers.color}--text`">{{speakers.name}}</h2>
+                        <h2 :class="`title font-weight-light ${presentation.color}--text`">{{presentation.name}}</h2>
                         <div>
-                          {{speakers.description}}
+                          {{presentation.description}}
                         </div>
                       </div>
                     </v-timeline-item>
@@ -397,7 +356,29 @@ export default {
   name: 'App',
   data () {
     return {
-       itemsSponsors: [
+        palestrantes: [
+          {
+            name: 'Ana G. Soares',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fsoares.jpeg?alt=media&token=e091b545-9122-4cd1-ac60-7ff087355d6c',
+            description: 'Em breve maiores informações'
+          },
+          {
+            name: 'Ana Spieker',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fspieker.jpeg?alt=media&token=9e1f91e6-5def-4db3-bde4-4d49ee966870',
+            description: 'Em breve maiores informações'
+          },
+          {
+            name: 'Bruna Von Runkel',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fbruna.jpeg?alt=media&token=01e1097a-f68b-47a4-8a7b-54b73721cd80',
+            description: 'Em breve maiores informações'
+          },
+          {
+            name: 'Cleiton Luis Mafra',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/speakers%2Fcaco.jpeg?alt=media&token=74a323d7-3ae1-4da6-b987-08d3f0631ac8',
+            description: 'Em breve maiores informações'
+          }
+        ],
+        itemsSponsors: [
           {
             name: 'Auditório',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fauditorio.jpeg?alt=media&token=51657047-4a9c-4a48-86af-fb24da3713d9',
@@ -456,55 +437,55 @@ export default {
           }
 
        ],
-       speakers: [
-        {
-          color: 'black',
-          name: 'Credenciamento',
-          hour: '08:00 - 09:00',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Abertura',
-          hour: '09:00 - 09:10',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Palestra 1',
-          hour: '09:10 - 10:00',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Palestra 2',
-          hour: '10:00 - 10:50',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Interalo',
-          hour: '10:50 - 11:00',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Palestra 3',
-          hour: '11:00 - 11:50',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Palestra 4',
-          hour: '11:50 - 12:30',
-          description: ''
-        },
-        {
-          color: 'black',
-          name: 'Mesa Redonda',
-          hour: '13:10 - 13:20',
-          description: ''
-        }
+       presentations: [
+          {
+            color: 'black',
+            name: 'Credenciamento',
+            hour: '08:00 - 09:00',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Abertura',
+            hour: '09:00 - 09:10',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Palestra 1',
+            hour: '09:10 - 10:00',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Palestra 2',
+            hour: '10:00 - 10:50',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Interalo',
+            hour: '10:50 - 11:00',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Palestra 3',
+            hour: '11:00 - 11:50',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Palestra 4',
+            hour: '11:50 - 12:30',
+            description: ''
+          },
+          {
+            color: 'black',
+            name: 'Mesa Redonda',
+            hour: '13:10 - 13:20',
+            description: ''
+          }
       ]
     }
   }
