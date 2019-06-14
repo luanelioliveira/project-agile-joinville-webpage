@@ -45,7 +45,7 @@
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://www.pena.com.br/wp-content/uploads/2017/05/user-icon.jpg" alt="avatar">
+                        <img src="https://media.licdn.com/dms/image/C4E03AQG9IYGA8lqBfg/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=Z8SZqfAq02QCeJ65R6NSNwKeU5kDRdC1H81-XtHX_m4" alt="avatar">
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
@@ -60,7 +60,7 @@
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://www.pena.com.br/wp-content/uploads/2017/05/user-icon.jpg" alt="avatar">
+                        <img src="https://media.licdn.com/dms/image/C4E03AQHjm2ITEDGZFw/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=-t9b9nDkACROLHAJUHFZer2zvyA8J32X9AE4mbVADNo" alt="avatar">
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
@@ -75,11 +75,11 @@
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://www.pena.com.br/wp-content/uploads/2017/05/user-icon.jpg" alt="avatar">
+                        <img src="https://media.licdn.com/dms/image/C4E03AQFYlH46mgBG6Q/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=TeY0NRHeLLM8-Ae7PadozCjw7XSFZwp-uVPNXph5D8U" alt="avatar">
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
-                      <div class="headline">Ana Spiker</div>
+                      <div class="headline">Ana Spieker</div>
                     </v-card-title>
                     <v-card-text>
                       <p class="text-xs-center">Em breve maiores informações</p>
@@ -90,7 +90,7 @@
                   <v-card class="elevation-0 transparent">
                     <v-card-text class="text-xs-center">
                       <v-avatar size="150" color="grey lighten-4">
-                        <img src="https://www.pena.com.br/wp-content/uploads/2017/05/user-icon.jpg" alt="avatar">
+                        <img src="https://media.licdn.com/dms/image/C4D03AQGMAUDxAP71Vw/profile-displayphoto-shrink_800_800/0?e=1565827200&v=beta&t=bW9S1fy2XTo01vLtfTVaZD8FFfajSye0m2YgGEHin9k" alt="avatar">
                       </v-avatar>
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
