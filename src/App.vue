@@ -34,7 +34,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-1">Palestrantes Confirmados</h2>         
+              <h2 class="display-2 font-weight-thin">Palestrantes Confirmados</h2>         
             </div>
           </v-flex>
           <v-flex xs12>
@@ -53,7 +53,7 @@
                     </v-card-text>
                     <v-card-title primary-title class="layout justify-center">
                       <div>
-                        <span class="headline text-xs-center">{{palestrante.nome}}</span>
+                        <h2 class="headline text-xs-center font-weight-light">{{palestrante.nome}}</h2>
                         <div class="d-flex">
                           <p class="text-xs-center">
                              <Biografia :palestrante="palestrante" />             
@@ -78,7 +78,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-1">Programação</h2>
+              <h2 class="display-2 font-weight-thin">Programação</h2>
             </div>
           </v-flex>
           <v-flex xs12>
@@ -100,10 +100,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-1">Localização</h2>
-              <span class="subheading">
-                R. Arno Waldemar Dohler, 957 - Zona Industrial Norte, Joinville
-              </span>
+              <h2 class="display-2 font-weight-thin">Localização</h2>
             </div>
           </v-flex>
           <v-flex xs12>
@@ -126,6 +123,13 @@
               </v-layout>
             </v-container>
           </v-flex>
+          <v-flex xs12 sm4 class="my-3">
+            <div class="text-xs-center">
+              <span class="subheading">
+                R. Arno Waldemar Dohler, 957 - Zona Industrial Norte, Joinville
+              </span>
+            </div>
+          </v-flex>
         </v-layout>
       </section>
 
@@ -138,7 +142,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-1">Apoios e Patrocínios</h2>
+              <h2 class="display-2 font-weight-thin">Apoios e Patrocínios</h2>
             </div>
           </v-flex>
           <v-flex xs12>
@@ -237,19 +241,25 @@
             <div class="text-xs-center">
               <h2 class="display-1">Quer apoiar, patrocinar ou divulgar sua empresa no evento?</h2>
               <span class="subheading mt-3">
-                Envie um e-mail para {{email}}
+                
               </span>
             </div>
           </v-flex>
-          </v-flex>
+          <v-flex xs12 sm4 class="my-3">
+            <div class="text-xs-center">
+              <span class="subheading">
+                Envie um e-mail para {{email}}
+              </span>
+            </div>
+          </v-flex>          
         </v-layout>
       </section>
 
       <section>
         <v-parallax src="https://images.pexels.com/photos/2376995/pexels-photo-2376995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="380">
           <v-layout column align-center justify-center>
-            <div class="headline white--text mb-3 text-xs-center">Venha participar e adiquirir novos conhecimentos!</div>
-            <em>"Compartilhar conhecimento é o caminho mais próximo da sabedoria..."</em>
+            <div class="display-2 font-weight-thin white--text mb-3 text-xs-center">Venha participar e adiquirir novos conhecimentos!</div>
+            <span class="font-weight-bold font-italic">"Compartilhar conhecimento é o caminho mais próximo da sabedoria..."</span>
             <v-btn
               class="black mt-5"
               dark
@@ -268,7 +278,7 @@
             <v-flex xs12 sm4>
               <v-card class="elevation-0 transparent">
                 <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Sobre nós</div>
+                  <div class="display-1 font-weight-thin">Sobre nós</div>
                 </v-card-title>
                 <v-card-text>
                   O Agile Joinville é uma organização que não possui fins lucrativos, 
@@ -280,7 +290,7 @@
             <v-flex xs12 sm4 offset-sm1>
               <v-card class="elevation-0 transparent">
                 <v-card-title primary-title class="layout justify-center">
-                  <div class="headline">Contate-nos</div>
+                  <div class="display-1 font-weight-thin">Contate-nos</div>
                 </v-card-title>
                 <v-card-text>
                   Envie uma email para nós com sua elogios, críticas e sugestões.
@@ -288,7 +298,7 @@
                 <v-list class="transparent">
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="red--text text--lighten-2">place</v-icon>
+                      <v-icon class="black--text text--lighten-2">place</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title>Joinville, Santa Catarina</v-list-tile-title>
@@ -296,7 +306,7 @@
                   </v-list-tile>
                   <v-list-tile>
                     <v-list-tile-action>
-                      <v-icon class="red--text text--lighten-2">email</v-icon>
+                      <v-icon class="black--text text--lighten-2">email</v-icon>
                     </v-list-tile-action>
                     <v-list-tile-content>
                       <v-list-tile-title>{{email}}</v-list-tile-title>
