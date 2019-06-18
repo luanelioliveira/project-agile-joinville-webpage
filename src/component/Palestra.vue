@@ -5,7 +5,7 @@
                 <div class="font-weight-bold title">{{palestra.titulo}}</div>
                 <div class="body-2 font-weight-light">{{palestra.subtitulo}}</div>
                 <span class="font-italic grey--text">{{palestra.palestrante}}</span><br>
-                <v-layout class="ml-0 mb-1" align-center>
+                <v-layout class="ml-0 my-1" align-center>
                     <v-icon class="mr-2">access_time</v-icon>
                     <span class="font-weight-bold grey--text">{{palestra.horario}}</span>
                 </v-layout>

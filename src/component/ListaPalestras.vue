@@ -65,7 +65,7 @@ export default {
                     titulo: 'Palestra 4',
                     subtitulo: '',
                     horario: '11:50 - 12:30',
-                    palestrante: 'A Definir',
+                    palestrante: 'Grupo de Resgate em Montanha',
                     descricao: 'A Definir'
                 },
                 {
