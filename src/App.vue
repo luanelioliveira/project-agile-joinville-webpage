@@ -366,7 +366,7 @@ export default {
         socials: [
           { 
             name: 'Facebook',
-            account: '', 
+            account: 'https://www.facebook.com/agilejoinvilleorg', 
             image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_face.png?alt=media&token=4e17efa1-c9e7-4afa-8e9e-45ade028748d' 
           },
           { 
