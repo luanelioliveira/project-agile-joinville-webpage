@@ -12,7 +12,7 @@
                 <v-btn
                     v-if="palestra.descricao"
                     depressed outline small @click="show = !show"
-                    color="indigo"
+                    color="blue-grey"
                     class="white--text ml-0"
                 >
                     Detalhes
