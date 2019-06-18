@@ -1,9 +1,11 @@
 <template>
     <div>
         <v-flex >
-            <v-container grid-list-xl  >
-                <v-layout row wrap justify-space-around fill-height column 
-                xs12 v-for="(apresentacao, i) in apresentacoes" :key="i">    
+            <v-container grid-list-xl>
+                <v-layout 
+                   justify-space-around 
+                   column 
+                   xs12 v-for="(apresentacao, i) in apresentacoes" :key="i">    
                     <Palestra :palestra="apresentacao" />
                 </v-layout>
             </v-container>
