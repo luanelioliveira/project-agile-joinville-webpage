@@ -210,14 +210,18 @@
                       <v-card-text >
                           <span v-if="!item.pendent">
                             <v-btn depressed outline color="grey" class="white--text">
-                               Patrocinado
-                               <v-icon right dark>favorite</v-icon>
+                              Patrocinado
+                              <v-icon right dark>favorite</v-icon>
                             </v-btn>
                           </span>
                           <span v-if="item.pendent">
-                            <v-btn depressed color="cyan" class="white--text">
-                               Patrocine Aqui
-                               <v-icon right dark>favorite_border</v-icon>
+                            <v-btn 
+                              v-on:click="sendMail(email)" 
+                              depressed
+                              color="cyan" 
+                              class="white--text" >
+                              Patrocine
+                              <v-icon right dark>favorite_border</v-icon>
                             </v-btn>
                           </span>
                       </v-card-text>
@@ -453,12 +457,12 @@ export default {
             organization: 'MAGRATHEA LABS'
           },
           {
-            name: 'Camisetas',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcamisetas.jpeg?alt=media&token=4488507d-0f69-4894-805d-1e0afbee6a0b',
-            description: 'Camisetas para até 100 pessoas',
-            pendent: true,
-            msg: "PENDENTE",
-            organization: ''
+            name: 'Copos',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcopos.jpeg?alt=media&token=be184d1e-cb30-4ced-905b-d3def9a0aae3',
+            description: 'Copos para até 100 pessoas',
+            pendent: false,
+            msg: 'PATROCINADO',
+            organization: 'KIRIHUB'
           },
           {
             name: 'Canetas',
@@ -467,6 +471,14 @@ export default {
             pendent: false,
             msg: 'PATROCINADO',
             organization: 'UNIMED FEDERAÇÃO SC'
+          },
+          {
+            name: 'Camisetas',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcamisetas.jpeg?alt=media&token=4488507d-0f69-4894-805d-1e0afbee6a0b',
+            description: 'Camisetas para até 100 pessoas',
+            pendent: true,
+            msg: "PENDENTE",
+            organization: ''
           },
           {
             name: 'Blocos de Anotação',
@@ -483,14 +495,6 @@ export default {
             pendent: true,
             msg: "PENDENTE",
             organization: ''
-          },
-          {
-            name: 'Copos',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcopos.jpeg?alt=media&token=be184d1e-cb30-4ced-905b-d3def9a0aae3',
-            description: 'Copos para até 100 pessoas',
-            pendent: false,
-            msg: 'PATROCINADO',
-            organization: 'KIRIHUB'
           }
       ]
     }
@@ -498,6 +502,9 @@ export default {
   methods : {
     openPage(page) {
       window.open(page,'_blank');
+    },
+    sendMail(email) {
+      this.openPage('mailto:' + email);
     }
   }
 }
