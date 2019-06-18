@@ -333,8 +333,9 @@
                 <v-card-title class="layout justify-center">
                   <v-avatar
                     v-for="(social, i) in socials" :key="i"
-                    class="mx-4" 
+                    class="mx-4"
                     size="50"
+                    style="cursor: pointer"
                     v-bind:href="social.account"
                   >
                     <img 
