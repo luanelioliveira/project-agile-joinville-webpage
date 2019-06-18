@@ -142,7 +142,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-2 font-weight-thin">APOIS & PATROCÍNIOS</h2>
+              <h2 class="display-2 font-weight-thin">APOIOS & PATROCÍNIOS</h2>
             </div>
           </v-flex>
           <v-flex xs12>

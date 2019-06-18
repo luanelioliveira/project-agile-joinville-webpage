@@ -6,19 +6,19 @@
                 <div class="body-2 font-weight-light">{{palestra.subtitulo}}</div>
                 <span class="font-italic grey--text">{{palestra.palestrante}}</span><br>
                 <v-layout class="ml-0 my-1" align-center>
-                    <v-icon class="mr-2">access_time</v-icon>
+                    <v-icon class="mr-1">access_time</v-icon>
                     <span class="font-weight-bold grey--text">{{palestra.horario}}</span>
                 </v-layout>
+                <v-btn
+                    v-if="palestra.descricao"
+                    depressed outline small @click="show = !show"
+                    color="indigo"
+                    class="white--text ml-0"
+                >
+                    Detalhes
+                    <v-icon right dark>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                </v-btn>
             </div>
-                <v-spacer></v-spacer>
-                    <v-btn
-                        v-if="palestra.descricao"
-                        small fab @click="show = !show"
-                        color="blue-grey"
-                        class="white--text"
-                    >
-                        <v-icon dark>{{ show ? 'remove' : 'add' }}</v-icon>
-                    </v-btn>
         </v-card-title>
 
         <v-slide-y-transition>
