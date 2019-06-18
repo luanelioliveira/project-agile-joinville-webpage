@@ -48,7 +48,7 @@ export default {
                     descricao: 'O Scrum e o Kanban, compartilham alguns conceitos semelhantes, com abordagens diferentes, confundindo as pessoas na sua utilização. Descubra como aplicar as técnicas do jeito certo e de acordo com a sua necessidade.'
                 },
                 {
-                    titulo: 'Interalo',
+                    titulo: 'Intervalo',
                     subtitulo: '',
                     horario: '10:50 - 11:00',
                     palestrante: '',
