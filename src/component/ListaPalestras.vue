@@ -41,8 +41,8 @@ export default {
                     descricao: 'Você está com dificuldades de liderar seu time? Seu time está com dificuldades para cumprir os prazos e realizar as entregas? Seu time está frequentemente sobrecarregado? Você está com dúvida por onde começar? Não desanime, você não está sozinho, isso é mais comum do que você pensa! Vou apresentar como a abordagem e as práticas do método Kanban podem ajudar seu time a identificar e resolver problemas, estimulando atos de liderança, um ambiente de alta performance, ajudando a escalar para toda a organização e garantindo que você comece da maneira certa e tenha consistência para garantir os resultados se sustentem no longo prazo.'
                 },
                 {
-                    titulo: 'Conheça as Diferenças Entre Scrum e Kanban',
-                    subtitulo: '',
+                    titulo: 'Scrum & Kanban',
+                    subtitulo: 'Conheça as Diferenças',
                     horario: '10:00 - 10:50',
                     palestrante: 'Ana G. Soares',
                     descricao: 'O Scrum e o Kanban, compartilham alguns conceitos semelhantes, com abordagens diferentes, confundindo as pessoas na sua utilização. Descubra como aplicar as técnicas do jeito certo e de acordo com a sua necessidade.'
@@ -63,7 +63,7 @@ export default {
                 },
                 {
                     titulo: 'Palestra 4',
-                    subtitulo: 'A Definir',
+                    subtitulo: '',
                     horario: '11:50 - 12:30',
                     palestrante: 'A Definir',
                     descricao: 'A Definir'
