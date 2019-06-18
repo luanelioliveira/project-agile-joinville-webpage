@@ -312,20 +312,20 @@
       <v-footer class="grey darken-4" height="auto">
         <v-container grid-list-xl>
           <v-layout row wrap justify-space-between align-center>
-            <v-flex xs12 sm4>
+            <v-flex xs12 sm6>
               <v-card class="elevation-0 transparent">
                 <v-card-title class="white--text layout justify-center">
                   Copyright © 2019 Agile Joinville - Todos os direitos reservados
                 </v-card-title>               
               </v-card>
             </v-flex>
-            <v-flex xs12 sm4>
+            <v-flex xs12 sm6>
               <v-card class="elevation-0 transparent">
                 <v-card-title class="layout justify-center">
                   <v-avatar
                     v-for="(social, i) in socials" :key="i"
-                    class="mx-4"
-                    size="50"
+                    class="mx-3"
+                    size="40"
                     style="cursor: pointer"
                     v-bind:href="social.account"
                   >
@@ -360,16 +360,23 @@ export default {
           { 
             name: 'Facebook',
             account: 'https://www.facebook.com/AgileJoinvilleConf', 
-            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_face.png?alt=media&token=4e17efa1-c9e7-4afa-8e9e-45ade028748d' 
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ffacebook.png?alt=media&token=6b4289a4-710d-4a15-8180-688ac92124a4' 
           },
           { 
             name: 'Instagram',
             account: 'https://www.instagram.com/AgileJoinville', 
-            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_instagram.png?alt=media&token=ed5c681d-0112-4d6a-8c58-12bce9cc9ccd' },
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Finstagram.png?alt=media&token=85cbaf14-0546-4800-ae4e-cef86535deb5' 
+          },
           { 
             name: 'Linkedin',
             account: 'https://www.linkedin.com/company/agilejoinville/', 
-            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_linkedin.png?alt=media&token=fcba8b95-498d-4fe4-891a-ae6ad5a39bcb' }
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Flinkedin.png?alt=media&token=2d67a8f5-09bf-4445-a836-5e482fc9896b' 
+          },
+          { 
+            name: 'Youtube',
+            account: 'https://www.youtube.com/channel/UCish83IHokYTejxWLtHTByA', 
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Fyoutube.png?alt=media&token=0b35af4c-5840-4886-8a33-3e27c20b818a' 
+          }
         ],
         patrocinadores: [
           {
