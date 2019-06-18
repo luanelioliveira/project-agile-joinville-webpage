@@ -274,7 +274,6 @@
       <section>
         <v-container grid-list-xl>
           <v-layout row wrap justify-center class="my-5">
-            <v-for 
             <v-flex xs12 sm4>
               <v-card class="elevation-0 transparent">
                 <v-card-title primary-title class="layout justify-center">
@@ -317,16 +316,39 @@
             </v-flex>
           </v-layout>
         </v-container>
-      </section>    
-      <v-footer class="grey darken-4">
-        <v-layout row wrap align-center>
-          <v-flex xs12>
-            <div class="white--text ml-3">
-              Copyright © 2019 Agile Joinville - Todos os direitos reservados
-            </div>
-          </v-flex>
-        </v-layout>
+      </section>   
+
+      <v-footer class="grey darken-4" height="auto">
+        <v-container grid-list-xl>
+          <v-layout row wrap justify-space-between align-center>
+            <v-flex xs12 sm4>
+              <v-card class="elevation-0 transparent">
+                <v-card-title class="white--text layout justify-center">
+                  Copyright © 2019 Agile Joinville - Todos os direitos reservados
+                </v-card-title>               
+              </v-card>
+            </v-flex>
+            <v-flex xs12 sm4>
+              <v-card class="elevation-0 transparent">
+                <v-card-title class="layout justify-center">
+                  <v-avatar
+                    v-for="(social, i) in socials" :key="i"
+                    class="mx-4" 
+                    size="50"
+                    v-bind:href="social.account"
+                  >
+                    <img 
+                      :src="social.image" 
+                      v-on:click="openPage(social.account)" 
+                      alt="avatar">
+                  </v-avatar>       
+                </v-card-title>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
       </v-footer>
+
     </v-content>
   </v-app>
 </template>
@@ -341,6 +363,21 @@ export default {
   data () {
     return {
         email: 'agilejoinville@gmail.com',
+        socials: [
+          { 
+            name: 'Facebook',
+            account: '', 
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_face.png?alt=media&token=4e17efa1-c9e7-4afa-8e9e-45ade028748d' 
+          },
+          { 
+            name: 'Instagram',
+            account: 'https://www.instagram.com/agilejoinville/', 
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_instagram.png?alt=media&token=ed5c681d-0112-4d6a-8c58-12bce9cc9ccd' },
+          { 
+            name: 'Linkedin',
+            account: 'https://www.linkedin.com/company/35686605/admin/', 
+            image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_linkedin.png?alt=media&token=fcba8b95-498d-4fe4-891a-ae6ad5a39bcb' }
+        ],
         patrocinadores: [
           {
             nome: 'FESC',
@@ -506,6 +543,11 @@ export default {
             description: ''
           }
       ]
+    }
+  },
+  methods : {
+    openPage(page) {
+      window.open(page,'_blank');
     }
   }
 }
