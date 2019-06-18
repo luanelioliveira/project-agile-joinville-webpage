@@ -9,17 +9,11 @@
             justify-center
             class="white--text"
           >
-            <h1 class="white--text font-weight-thin mb-2 display-3 text-xs-center">AGILE JOINVILLE CONFERENCE</h1>
-            <h1 class="white--text font-weight-black mb-2 headline text-xs-center">10 DE AGOSTO DE 2019</h1>
-            <v-btn
-              class="indigo darken-3 mt-4"
-              dark
-              flat
-              round
-              depressed
-              large
-            >
-              SAVE THE DATE
+            <h1 class="white--text font-weight-thin display-3 text-xs-center">AGILE JOINVILLE</h1>
+            <h1 class="white--text font-weight-black mb-2 display-3 text-xs-center">C O N F E R E N C E</h1>
+            <h1 class="white--text font-weight-bold mb-2 title text-xs-center">10 • AGOSTO • 2019</h1>
+            <v-btn class="indigo darken-3 mt-4" dark flat round depressed large v-on:click="openPage(inscricoes)">
+              FAZER MINHA INSCRIÇÃO
             </v-btn>
           </v-layout>
         </v-parallax>
@@ -261,13 +255,9 @@
           <v-layout column align-center justify-center>
             <div class="display-2 font-weight-thin white--text mb-3 text-xs-center">Venha participar e adiquirir novos conhecimentos!</div>
             <span class="font-weight-bold font-italic">"Compartilhar conhecimento é o caminho mais próximo da sabedoria..."</span>
-            <v-btn
-              class="black mt-5"
-              dark
-              large
-            >
-              SAVE THE DATE
-            </v-btn>
+            <v-btn class="black mt-5" dark flat round depressed large v-on:click="openPage(inscricoes)">
+              FAZER MINHA INSCRIÇÃO
+            </v-btn>            
           </v-layout>
         </v-parallax>
       </section>
@@ -365,19 +355,20 @@ export default {
   data () {
     return {
         email: 'agilejoinville@gmail.com',
+        inscricoes: 'https://inscricoes.agilebrazil.com/',
         socials: [
           { 
             name: 'Facebook',
-            account: 'https://www.facebook.com/agilejoinvilleorg', 
+            account: 'https://www.facebook.com/AgileJoinvilleConf', 
             image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_face.png?alt=media&token=4e17efa1-c9e7-4afa-8e9e-45ade028748d' 
           },
           { 
             name: 'Instagram',
-            account: 'https://www.instagram.com/agilejoinville/', 
+            account: 'https://www.instagram.com/AgileJoinville', 
             image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_instagram.png?alt=media&token=ed5c681d-0112-4d6a-8c58-12bce9cc9ccd' },
           { 
             name: 'Linkedin',
-            account: 'https://www.linkedin.com/company/35686605/admin/', 
+            account: 'https://www.linkedin.com/company/agilejoinville/', 
             image: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/socials%2Ficonfinder_linkedin.png?alt=media&token=fcba8b95-498d-4fe4-891a-ae6ad5a39bcb' }
         ],
         patrocinadores: [
