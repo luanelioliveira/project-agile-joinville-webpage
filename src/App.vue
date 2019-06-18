@@ -34,7 +34,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-2 font-weight-thin">Palestrantes Confirmados</h2>         
+              <h2 class="display-2 font-weight-thin">PALESTRANTES</h2>         
             </div>
           </v-flex>
           <v-flex xs12>
@@ -51,7 +51,7 @@
                         <img :src="palestrante.imagem" alt="avatar">
                       </v-avatar>
                     </v-card-text>
-                    <v-card-title primary-title class="layout justify-center">
+                    <v-card-title class="layout justify-center">
                       <div>
                         <h2 class="headline text-xs-center font-weight-light">{{palestrante.nome}}</h2>
                         <div class="d-flex">
@@ -78,7 +78,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-2 font-weight-thin">Programação</h2>
+              <h2 class="display-2 font-weight-thin">PROGRAMAÇÃO</h2>
             </div>
           </v-flex>
           <v-flex xs12>
@@ -100,7 +100,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-2 font-weight-thin">Localização</h2>
+              <h2 class="display-2 font-weight-thin">LOCALIZAÇÃO</h2>
             </div>
           </v-flex>
           <v-flex xs12>
@@ -142,7 +142,7 @@
         >
           <v-flex xs12 sm4 class="my-3">
             <div class="text-xs-center">
-              <h2 class="display-2 font-weight-thin">Apoios e Patrocínios</h2>
+              <h2 class="display-2 font-weight-thin">APOIS & PATROCÍNIOS</h2>
             </div>
           </v-flex>
           <v-flex xs12>
@@ -265,7 +265,7 @@
               dark
               large
             >
-              Aguardar Inscrições
+              SAVE THE DATE
             </v-btn>
           </v-layout>
         </v-parallax>

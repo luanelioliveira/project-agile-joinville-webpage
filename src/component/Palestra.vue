@@ -2,17 +2,22 @@
     <v-card>
         <v-card-title>
             <div>
-                <div class="subheading">{{palestra.titulo}}</div>
+                <div class="font-weight-bold subheading">{{palestra.titulo}}</div>
                 <div class="body-2">{{palestra.subtitulo}}</div>
                 <span class="font-italic grey--text">{{palestra.palestrante}}</span><br>
                 <div v-if="palestra.descricao">
-                    <span class="">Saiba mais</span>
-                    <v-btn icon @click="show = !show">
-                        <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-                    </v-btn>
+                    <v-btn
+                        small round flat @click="show = !show"
+                        color="blue-grey"
+                        class="white--text"
+                    >
+                        detalhes
+                        <v-icon right dark>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+                    </v-btn>                    
                 </div>
             </div>
             <v-spacer></v-spacer>
+            <v-icon class="mr-2">access_time</v-icon>
             <span class="font-weight-bold grey--text">{{palestra.horario}}</span>
         </v-card-title>
 

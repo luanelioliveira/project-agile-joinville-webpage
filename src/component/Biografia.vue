@@ -5,7 +5,7 @@
     >
         <template v-slot:activator="{ on }">
         <v-btn
-            small depressed color="grey" class="white--text"                                  
+            small depressed color="blue-grey darken-4" class="white--text"                                  
             v-on="on"
         >
             Biografia
