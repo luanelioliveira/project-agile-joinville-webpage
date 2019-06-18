@@ -434,7 +434,7 @@ export default {
             description: 'Espaço para até 100 pessoas',
             pendent: false,
             msg: 'PATROCINADO',
-            organization: 'Nome da Empresa'
+            organization: 'SENAI'
           },
           {
             name: 'Crachás',
@@ -442,7 +442,7 @@ export default {
             description: '100 unidades de crachá e cordão',
             pendent: false,
             msg: 'PATROCINADO',
-            organization: 'Nome da Empresa'
+            organization: 'IDEAL CARDS'
           },
           {
             name: 'Coffee',
@@ -450,7 +450,7 @@ export default {
             description: 'Coffee para até 100 pessoas',
             pendent: false,
             msg: "PATROCINADO",
-            organization: 'Nome da Empresa'
+            organization: 'MAGRATHEA LABS'
           },
           {
             name: 'Camisetas',
@@ -466,7 +466,7 @@ export default {
             description: 'Canetas para até 100 pessoas',
             pendent: false,
             msg: 'PATROCINADO',
-            organization: 'Nome da Empresa'
+            organization: 'UNIMED FEDERAÇÃO SC'
           },
           {
             name: 'Blocos de Anotação',
@@ -490,7 +490,7 @@ export default {
             description: 'Copos para até 100 pessoas',
             pendent: false,
             msg: 'PATROCINADO',
-            organization: 'Nome da Empresa'
+            organization: 'KIRIHUB'
           }
       ]
     }
