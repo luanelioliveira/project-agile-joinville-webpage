@@ -468,17 +468,17 @@ export default {
             organization: 'UNIMED FEDERAÇÃO SC'
           },
           {
-            name: 'Camisetas',
-            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcamisetas.jpeg?alt=media&token=4488507d-0f69-4894-805d-1e0afbee6a0b',
-            description: 'Camisetas para até 100 pessoas',
-            pendent: true,
-            msg: "PENDENTE",
-            organization: ''
-          },
-          {
             name: 'Blocos de Anotação',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fbloco.jpeg?alt=media&token=a8d9b266-9e08-4171-b36c-6efe0d9fa413',
             description: 'Blocos para até 100 pessoas',
+            pendent: true,
+            msg: "PATROCINADO",
+            organization: 'SOFT EXPERT'
+          },
+          {
+            name: 'Camisetas',
+            urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fcamisetas.jpeg?alt=media&token=4488507d-0f69-4894-805d-1e0afbee6a0b',
+            description: 'Camisetas para até 100 pessoas',
             pendent: true,
             msg: "PENDENTE",
             organization: ''
