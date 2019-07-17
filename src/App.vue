@@ -471,7 +471,7 @@ export default {
             name: 'Blocos de Anotação',
             urlImage: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fbloco.jpeg?alt=media&token=a8d9b266-9e08-4171-b36c-6efe0d9fa413',
             description: 'Blocos para até 100 pessoas',
-            pendent: true,
+            pendent: false,
             msg: "PATROCINADO",
             organization: 'SOFT EXPERT'
           },
