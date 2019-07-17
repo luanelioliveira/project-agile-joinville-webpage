@@ -60,7 +60,7 @@ export default {
         },
         {
           nome: 'Softexpert',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FUNIMEDSC.png?alt=media&token=65290a98-510f-4257-ba44-a491d6999b30'
+          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fsoftexpert.png?alt=media&token=4ee9412a-fc51-42f7-b33f-e56b8071ad64'
         },
         {
           nome: 'Unimed Santa Catarina',
