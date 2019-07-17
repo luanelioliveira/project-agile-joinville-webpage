@@ -3,23 +3,7 @@
     <v-content>
       <Cabecalho />
       <Palestrantes />
-
-      <section>
-        <v-layout column >
-          <v-flex xs12 class="my-3">
-            <div class="text-xs-center">
-              <h2 class="display-2 font-weight-thin">PROGRAMAÇÃO</h2>
-            </div>
-          </v-flex>
-          <v-flex xs12>
-            <v-container grid-list-xl>
-              <v-layout row wrap justify-space-around fill-height column>
-                <ListaPalestras/>
-              </v-layout>
-            </v-container>            
-          </v-flex>
-        </v-layout>
-      </section>
+      <Programacao />
 
       <section>
         <v-layout
@@ -87,6 +71,7 @@
 <script>
 import Cabecalho from './component/Cabecalho'
 import Palestrantes from './component/Palestrantes'
+import Programacao from './component/Programacao'
 import ListaPalestras from './component/ListaPalestras'
 import Patrocinadores from './component/Patrocinadores'
 import ItensPatrocinados from './component/ItensPatrocinados'
@@ -98,6 +83,7 @@ export default {
   components: { 
     Cabecalho,
     Palestrantes,
+    Programacao,
     ListaPalestras,
     Patrocinadores,
     ItensPatrocinados,
