@@ -125,33 +125,9 @@
       </section>
 
       <Patrocinadores />  
-      <ItensPatrocinados />      
+      <ItensPatrocinados />   
+      <DivulgacaoApoio />     
       
-      <section>
-        <v-layout
-          column
-          wrap
-          class="my-5"
-          align-center
-        >
-          <v-flex xs12 sm4 class="my-3">
-            <div class="text-xs-center">
-              <h2 class="display-1">Quer apoiar, patrocinar ou divulgar sua empresa no evento?</h2>
-              <span class="subheading mt-3">
-                
-              </span>
-            </div>
-          </v-flex>
-          <v-flex xs12 sm4 class="my-3">
-            <div class="text-xs-center">
-              <span class="subheading">
-                Envie um e-mail para {{email}}
-              </span>
-            </div>
-          </v-flex>          
-        </v-layout>
-      </section>
-
       <section>
         <v-parallax src="https://images.pexels.com/photos/2376995/pexels-photo-2376995.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" height="380">
           <v-layout column align-center justify-center>
@@ -174,6 +150,7 @@ import Biografia from './component/Biografia'
 import ListaPalestras from './component/ListaPalestras'
 import Patrocinadores from './component/Patrocinadores'
 import ItensPatrocinados from './component/ItensPatrocinados'
+import DivulgacaoApoio from './component/DivulgacaoApoio'
 import Organizacao from './component/Organizacao'
 import Rodape from './component/Rodape'
 
@@ -183,6 +160,7 @@ export default {
     ListaPalestras,
     Patrocinadores,
     ItensPatrocinados,
+    DivulgacaoApoio,
     Organizacao,
     Rodape
   },
