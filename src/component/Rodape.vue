@@ -59,7 +59,12 @@ export default {
         }
       ],    
     }
-  }  
+  },
+  methods : {
+    openPage(page) {
+      window.open(page,'_blank');
+    },
+  },
 }
 </script>
 

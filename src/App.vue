@@ -10,6 +10,7 @@
       <DivulgacaoApoio />   
       <DivulgacaoEvento />           
       <Organizacao /> 
+      <Organizadores /> 
       <Rodape /> 
     </v-content>
   </v-app>
@@ -25,6 +26,7 @@ import ItensPatrocinados from './component/ItensPatrocinados'
 import DivulgacaoApoio from './component/DivulgacaoApoio'
 import DivulgacaoEvento from './component/DivulgacaoEvento'
 import Organizacao from './component/Organizacao'
+import Organizadores from './component/Organizadores'
 import Rodape from './component/Rodape'
 
 export default {
@@ -38,6 +40,7 @@ export default {
     DivulgacaoApoio,
     DivulgacaoEvento,
     Organizacao,
+    Organizadores,
     Rodape
   },
   name: 'App',  
