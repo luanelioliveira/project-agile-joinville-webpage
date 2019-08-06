@@ -3,10 +3,15 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-jobs:
-  build:
+executors:
+  my-executor:
     docker:
       - image: circleci/node:8.12
+    working_directory: /tmp
+    
+jobs:
+  build:    
+    executor: my-executor
     steps:
       - checkout    
       - restore_cache:
@@ -23,12 +28,26 @@ jobs:
       - run: 
           name: Build App
           command: yarn build
+          
       - persist_to_workspace:
           root: .
           paths:
-            - .
+            - node_modules
+  deploy:
+    executor: my-executor
+    steps:
       - attach_workspace:
-          at: .
+          at: /tmp/node_modules    
       - run:
           name: Deploy Master to Firebase
-          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+          command: /tmp/node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+          
+workflows:
+  version: 2
+
+  btd:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
