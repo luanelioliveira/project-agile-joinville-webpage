@@ -7,7 +7,6 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.12
-    working_directory: ~/repo
     steps:
       - checkout    
       - restore_cache:
@@ -28,9 +27,6 @@ jobs:
           root: .
           paths:
             - .
-    
-  deploy:
-    steps:
       - attach_workspace:
           at: .
       - run:
