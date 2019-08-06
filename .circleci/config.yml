@@ -19,11 +19,11 @@ jobs:
           command: yarn install
       - save_cache:
           paths:
-            - node_modules
+            - ./node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run: 
           name: Build App
           command: yarn build
       - run:
           name: Firebase Deploy
-          command: firebase deploy --token "$FIREBASE_TOKEN"
+          command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
