@@ -24,6 +24,27 @@ jobs:
       - run: 
           name: Build App
           command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+    
+  deploy:
+    steps:
+      - attach_workspace:
+          at: .
       - run:
-          name: Firebase Deploy
+          name: Deploy Master to Firebase
           command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
+          
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
