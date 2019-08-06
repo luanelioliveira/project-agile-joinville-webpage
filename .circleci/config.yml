@@ -1,53 +1,26 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
-executors:
-  my-executor:
-    docker:
-      - image: circleci/node:8.12
-    working_directory: /tmp
-    
 jobs:
-  build:    
-    executor: my-executor
-    steps:
-      - checkout    
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package.json" }}
-            - v1-dependencies-
-      - run:
-          name: Install
-          command: yarn install
-      - save_cache:
-          paths:
-            - ./node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-      - run: 
-          name: Build App
-          command: yarn build
-          
-      - persist_to_workspace:
-          root: .
-          paths:
-            - node_modules
-  deploy:
-    executor: my-executor
-    steps:
-      - attach_workspace:
-          at: /tmp/node_modules    
-      - run:
-          name: Deploy Master to Firebase
-          command: /tmp/node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN"
-          
-workflows:
-  version: 2
-
-  btd:
-    jobs:
-      - build
-      - deploy:
-          requires:
-            - build
+    build:
+        docker:
+            - image: circleci/node:8.12
+        working_directory: ~/repo
+        steps:
+            - checkout
+            # Download and cache dependencies
+            - restore_cache:
+                  keys:
+                      - v1-dependencies-{{ checksum "package.json" }}
+                      - v1-dependencies-
+            - run:
+                  name: Install Dependencies
+                  command: npm install
+            - save_cache:
+                  key: v1-npm-deps-{{ checksum "package-lock.json" }}
+                  paths:
+                      - ./node_modules
+            - run:
+                  name: Build
+                  command: npm build
+            - run:
+                  name: Firebase Deploy
+                  command: ./node_modules/.bin/firebase deploy --token "$FIREBASE_TOKEN" --only hosting
