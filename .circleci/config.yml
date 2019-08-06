@@ -23,6 +23,6 @@ jobs:
                   command: npm build
             - run:
                   name: Firebase Deploy
-                  command: 
+                  commands: 
                     - yarn install -g firebase-tools
                     - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
