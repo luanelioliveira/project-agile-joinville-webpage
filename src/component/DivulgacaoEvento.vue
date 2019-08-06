@@ -4,8 +4,8 @@
       <v-layout column align-center justify-center>
         <div class="display-2 font-weight-thin white--text mb-3 text-xs-center">Venha participar e adiquirir novos conhecimentos!</div>
         <span class="font-weight-bold font-italic">"Compartilhar conhecimento é o caminho mais próximo da sabedoria..."</span>
-        <v-btn class="black mt-5" dark flat round depressed large v-on:click="openPage(inscricoes)">
-          FAZER MINHA INSCRIÇÃO
+        <v-btn class="black mt-5" dark flat round depressed large>
+          INSCRIÇÕES ENCERRADAS
         </v-btn>            
       </v-layout>
     </v-parallax>
