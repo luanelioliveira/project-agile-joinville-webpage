@@ -55,6 +55,10 @@ export default {
           url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FMagratheaLabs-1.png?alt=media&token=d6386a2e-6dc6-4a99-9994-9f85297b0132'
         },
         {
+          nome: 'Neogrid',
+          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fneogrid.png?alt=media&token=4ea39cc6-1d4d-4ac7-8576-45c8574077ff',
+        },
+        {
           nome: 'Senai',
           url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FSenai.png?alt=media&token=c029e3eb-0d95-49cb-8bce-d2ecb3c99362'
         },
