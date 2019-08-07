@@ -34,49 +34,34 @@
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
   data () {
     return {
-      patrocinadores: [
-        {
-          nome: 'FESC',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FFESC.png?alt=media&token=c8bf30e0-eb65-4c7e-988b-4fa2155a0710'
-        },
-        {
-          nome: 'IdealCards',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FIdealCards.png?alt=media&token=b995fa6c-af99-4c84-8fb0-06a65960701a'
-        },
-        {
-          nome: 'Kirihub',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FKirihub.png?alt=media&token=f5974f7c-6fe5-4acb-98a4-a14cb6aca4a0'
-        },
-        {
-          nome: 'Magrathea Labs',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FMagratheaLabs-1.png?alt=media&token=d6386a2e-6dc6-4a99-9994-9f85297b0132'
-        },
-        {
-          nome: 'Neogrid',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fneogrid.png?alt=media&token=4ea39cc6-1d4d-4ac7-8576-45c8574077ff',
-        },
-        {
-          nome: 'Senai',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FSenai.png?alt=media&token=c029e3eb-0d95-49cb-8bce-d2ecb3c99362'
-        },
-        {
-          nome: 'Soft Expert',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fsoftexpert-nova.png?alt=media&token=2af16242-bcdd-4b61-8968-b346797a2530'
-        },
-        {
-          nome: 'Supero',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2Fsupero-nova.png?alt=media&token=5b022329-2688-419b-a7db-d0cd8ea74d2f'
-        },
-        {
-          nome: 'Unimed Santa Catarina',
-          url: 'https://firebasestorage.googleapis.com/v0/b/agile-joinville.appspot.com/o/sponsors%2FUNIMEDSC.png?alt=media&token=65290a98-510f-4257-ba44-a491d6999b30'
-        }
-      ],
+      patrocinadores: [],      
     }
-  }  
+  },
+  mounted() {
+    this.getPatrocinadores();
+  },
+  methods: {
+    getPatrocinadores() {
+      const db = firebase.firestore();
+      const patrocinadoresCollection = db.collection('patrocinadores').orderBy("nome");
+      patrocinadoresCollection.get()
+        .then( snapshot => {
+          const patrocinadores = [];
+          snapshot.forEach(doc => {
+            patrocinadores.push({
+              nome: doc.data().nome,
+              url: doc.data().url,
+            });
+          });
+          this.patrocinadores = patrocinadores;
+        });
+    }
+  },
 }
 </script>
 
