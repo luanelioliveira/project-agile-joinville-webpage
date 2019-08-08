@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import service from '../services/PalestrantesService';
 import Biografia from './Biografia'
 
 export default {
@@ -66,25 +66,7 @@ export default {
     }
   },
   mounted() {
-    this.getPalestrantes();
-  },
-  methods: {
-    getPalestrantes() {
-      const db = firebase.firestore();
-      const palestrantesCollection = db.collection('palestrantes').orderBy("nome");
-      palestrantesCollection.get()
-        .then( snapshot => {
-          const palestrantes = [];
-          snapshot.forEach(doc => {
-            palestrantes.push({
-              nome: doc.data().nome,
-              imagem: doc.data().imagem,
-              biografia: doc.data().biografia,
-            });
-          });
-          this.palestrantes = palestrantes;
-        });
-    }
+    this.palestrantes = service.getPalestrantes();
   }, 
 }
 </script>
