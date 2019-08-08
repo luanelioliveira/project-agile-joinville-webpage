@@ -1,22 +1,18 @@
-import firebase from 'firebase';
+import service from './BaseService';
 
-const getPalestrantes = () => {
-  const palestrantes = [];
-  const db = firebase.firestore();
-  const palestrantesCollection = db.collection('palestrantes').orderBy("nome");
-  palestrantesCollection.get()
-    .then( snapshot => {
-      snapshot.forEach(doc => {
-        palestrantes.push({
-          nome: doc.data().nome,
-          imagem: doc.data().imagem,
-          biografia: doc.data().biografia,
-        });
-      });
+const getPatrocinadores = async () => {
+  const patrocinadores = [];
+
+  let data = await service.get('patrocinadores', 'nome');
+  data.forEach(doc => {
+    patrocinadores.push({
+      nome: doc.data().nome,
+      url: doc.data().url,
     });
-    return palestrantes;
+  });
+  return patrocinadores;
 }
 
 export default {
-  getPalestrantes,
+  getPatrocinadores,
 };

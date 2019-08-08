@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+import service from '../services/PatrocinadoresService';
 
 export default {
   data () {
@@ -43,24 +43,10 @@ export default {
     }
   },
   mounted() {
-    this.getPatrocinadores();
-  },
-  methods: {
-    getPatrocinadores() {
-      const db = firebase.firestore();
-      const patrocinadoresCollection = db.collection('patrocinadores').orderBy("nome");
-      patrocinadoresCollection.get()
-        .then( snapshot => {
-          const patrocinadores = [];
-          snapshot.forEach(doc => {
-            patrocinadores.push({
-              nome: doc.data().nome,
-              url: doc.data().url,
-            });
-          });
-          this.patrocinadores = patrocinadores;
-        });
-    }
+    service.getPatrocinadores()
+    .then(result => {
+      this.patrocinadores = result;
+    });
   },
 }
 </script>
