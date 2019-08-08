@@ -6,7 +6,6 @@
       <Programacao />
       <Localizacao />      
       <Patrocinadores />  
-      <ItensPatrocinados />   
       <Divulgacao />            
       <Organizacao /> 
       <Rodape /> 
