@@ -66,7 +66,10 @@ export default {
     }
   },
   mounted() {
-    this.palestrantes = service.getPalestrantes();
+    service.getPalestrantes()
+    .then(result => {
+      this.palestrantes = result;
+    });
   }, 
 }
 </script>
