@@ -43,17 +43,6 @@
 
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      
-    }
-  }  
-}
-</script>
-
-
 <style>
 .mapouter {
   height:400px;

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import ListaPalestras from './ListaPalestras'
+import ListaPalestras from './palestras/ListaPalestras'
 
 export default {
   components: { 

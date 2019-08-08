@@ -1,4 +1,4 @@
-import service from './BaseService';
+import service from '../../../services/BaseService';
 
 const getPatrocinadores = async () => {
   const patrocinadores = [];

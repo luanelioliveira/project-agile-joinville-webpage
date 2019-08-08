@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import service from '../services/PalestrantesService';
+import service from './services/PalestrantesService';
 import Biografia from './Biografia'
 
 export default {

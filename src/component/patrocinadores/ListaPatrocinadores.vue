@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import service from '../services/PatrocinadoresService';
+import service from './services/PatrocinadoresService';
 
 export default {
   data () {
