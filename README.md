@@ -48,7 +48,7 @@ This project was developed with the following technologies:
 
 <p>This is a project develop to community Agile Joinville.</p>
 
-- [Check it out](https://agile.joinville.br/)
+- [Check it out](https://agile-joinville.web.app/)
 
 ## 🔖 Layout
 
